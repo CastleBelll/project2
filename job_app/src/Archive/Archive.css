@@ -1,0 +1,45 @@
+/* Ensures the container takes up the full height of the viewport */
+.archive-container {
+  display: flex;
+  height: 100vh;
+  max-width: 1560px;
+}
+
+/* Left sidebar styling */
+.left-sidebar {
+  width: 20%; /* Adjust width as needed */
+  padding-left:20px;
+  padding-top:84px;
+  background-color: #f0f0f0; /* Light background for sidebar */
+  border-right: solid 1px black; /* 테두리 색상을 명시적으로 설정 */
+  padding: 1rem; /* Optional padding */
+}
+
+/* Right container styling */
+.right-container {
+  flex: 1; /* Takes up the remaining space */
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  max-width:1560px;
+}
+
+/* Header styling */
+.header {
+  height: 15%; /* Adjust height as needed */
+  background-color: #333; /* Dark background for header */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Main area styling */
+.main-area {
+  flex: 1; /* Takes up the remaining vertical space */
+  background-color: #fff; /* White background for main content */
+  overflow: auto; /* Scrollable if content exceeds container height */
+  padding: 1rem;
+  box-sizing: border-box;
+}

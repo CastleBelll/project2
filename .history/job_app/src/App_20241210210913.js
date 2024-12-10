@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { BsSearch } from 'react-icons/bs'; // 검색 아이콘 가져오기
 import './App.css';
@@ -49,8 +49,6 @@ function App() {
         <Navigation /> {/* 네비게이션 컴포넌트 사용 */}
         <Container className="content">
           <Routes>
-            {/* 기본 경로로 이동 시 /generator로 리디렉션 */}
-            <Route path="/" element={<Navigate to="/generator" />} />
             <Route path="/archive" element={<Archive />} />
             <Route path="/generator" element={<Generator />} />
           </Routes>
