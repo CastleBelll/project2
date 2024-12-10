@@ -6,6 +6,7 @@ import './App.css';
 import Archive from './Archive/Archive';
 import Generator from './Generator/Generator';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/fonts.css';
 
 function Navigation() {
   const location = useLocation(); // 현재 경로를 가져오기

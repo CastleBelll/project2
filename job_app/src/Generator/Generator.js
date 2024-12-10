@@ -7,13 +7,13 @@ const Generator = () => {
   const textElementsRef = useRef([]);
   const debounceTimer = useRef(null);
   const [data, setData] = useState([]);
+  const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
 
   // JSON 파일에서 데이터를 가져오는 useEffect
   useEffect(() => {
     fetch("/json/data.json")
       .then((response) => response.json())
       .then((jsonData) => {
-        // JSON 파일 형식에 맞게 data를 구성
         const data = jsonData.map((item) => ({
           category: item.category,
           items: item.items,
@@ -25,43 +25,46 @@ const Generator = () => {
       });
   }, []);
 
+  // 캔버스 크기 업데이트를 위한 useEffect
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container || data.length === 0) return; // data가 비어있으면 초기화 안 함
-
-    // 캔버스 크기 조정 함수
-    const resizeCanvas = () => {
-      const width = container.offsetWidth;
-      const height = container.offsetHeight;
-      render.options.width = width;
-      render.options.height = height;
-      topWall.position.x = width / 2;
-      topWall.position.y = -wallThickness / 2;
-      bottomWall.position.x = width / 2;
-      bottomWall.position.y = height + wallThickness / 2;
-      leftWall.position.x = -wallThickness / 2;
-      leftWall.position.y = height / 2;
-      rightWall.position.x = width + wallThickness / 2;
-      rightWall.position.y = height / 2;
+    const updateCanvasSize = () => {
+      const container = containerRef.current;
+      if (container) {
+        setCanvasSize({
+          width: container.offsetWidth,
+          height: container.offsetHeight,
+        });
+      }
     };
 
-    container.innerHTML = "";
-    textElementsRef.current = [];
+    // 초기 크기 설정
+    updateCanvasSize();
 
+    // 리사이즈 이벤트 리스너 등록
+    window.addEventListener("resize", updateCanvasSize);
+    return () => {
+      window.removeEventListener("resize", updateCanvasSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || data.length === 0) return;
+
+    // 캔버스 초기화 및 설정
     const engine = Engine.create();
     const world = engine.world;
-    engine.world.gravity.y = 1; // 중력 설정
+    engine.world.gravity.y = 1;
 
-    // 렌더링 최적화 적용
     const render = Render.create({
       element: container,
       engine: engine,
       options: {
-        width: container.offsetWidth,
-        height: container.offsetHeight,
-        wireframes: false, // 와이어프레임 비활성화
+        width: canvasSize.width,
+        height: canvasSize.height,
+        wireframes: false,
         background: "#000000",
-        pixelRatio: window.devicePixelRatio || 1, // 적절한 픽셀 비율 사용
+        pixelRatio: window.devicePixelRatio || 1,
       },
     });
 
@@ -70,8 +73,8 @@ const Generator = () => {
     Runner.run(runner, engine);
 
     // 캔버스 경계에 대한 벽 생성
-    const width = container.offsetWidth;
-    const height = container.offsetHeight;
+    const width = canvasSize.width;
+    const height = canvasSize.height;
     const wallThickness = 10;
 
     const topWall = Bodies.rectangle(width / 2, 0 - wallThickness / 2, width, wallThickness, {
@@ -93,37 +96,45 @@ const Generator = () => {
 
     World.add(world, [topWall, bottomWall, leftWall, rightWall]);
 
-    // 마우스 이동 시 사각형 생성 함수
     const handleMouseMove = (e) => {
-      if (data.length === 0) return; // data가 비어 있으면 함수 종료
+      if (data.length === 0) return;
 
       clearTimeout(debounceTimer.current);
       debounceTimer.current = setTimeout(() => {
         const rect = container.getBoundingClientRect();
-        const clientX = e.clientX - rect.left;
-        const clientY = e.clientY - rect.top;
+        let clientX = e.clientX - rect.left;
+        let clientY = e.clientY - rect.top;
 
-        if (clientX < 0 || clientY < 0 || clientX > rect.width || clientY > rect.height) return;
+        clientX -= 40; // 이동 보정
+        clientY -= 40; // 이동 보정
+
+        const navbarHeight = 60;
+        const maxWidth = 1800;
+        const maxHeight = navbarHeight + 200;
+
+        if (clientX < 0 || clientY < navbarHeight || clientX > maxWidth || clientY > maxHeight) {
+          return; // 영역 밖이면 함수 종료
+        }
 
         const randomCategory = data[Math.floor(Math.random() * data.length)];
         const randomItem = randomCategory.items[Math.floor(Math.random() * randomCategory.items.length)] || "";
 
         if (randomItem !== "") {
           const size = getRectangleSize(randomItem);
-          const angle = (Math.random() - 0.5) * Math.PI; // -45도에서 45도 사이의 랜덤 각도
-
+          const angle = (Math.random() - 0.5) * Math.PI; // 랜덤 각도
           const newRectangle = Bodies.rectangle(clientX, clientY, size.width, size.height, {
             angle: angle,
             chamfer: {
-              radius: [10, 10], // border-radius 설정이 가능합니다.
+              radius: [20, 20, 20, 20],
             },
             render: {
               fillStyle: "#000000",
               strokeStyle: "#ffffff",
-              lineWidth: 1,
+              lineWidth: 2,
             },
-            restitution: 0.7, // 반동 속성
-            friction: 0.3, // 마찰 속성
+            restitution: 0.5,
+            friction: 0.1,
+            frictionAir: 0.05,
             collisionFilter: {
               group: 1,
             },
@@ -133,11 +144,10 @@ const Generator = () => {
           World.add(world, newRectangle);
           textElementsRef.current.push({ body: newRectangle });
         }
-      },); // 디바운스 시간 간격 적용
+      },); // 디바운스 시간 간격
     };
 
     container.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("resize", resizeCanvas);
 
     // 화면 밖 사각형 제거
     Events.on(engine, "beforeUpdate", () => {
@@ -158,46 +168,49 @@ const Generator = () => {
     });
 
     Events.on(render, "afterRender", () => {
-      const context = render.context; // Canvas rendering context
+      const context = render.context;
 
-      // Iterate through all text elements
       textElementsRef.current.forEach(({ body }) => {
-        const { position, angle } = body; // Get body position and angle
-        const randomItem = body.label; // Use the label property to store the text
+        const { position, angle } = body;
+        const randomItem = body.label;
 
         if (randomItem) {
           context.save();
           context.translate(position.x, position.y);
-          context.rotate(angle); // Align text rotation with the rectangle
-          context.fillStyle = "#ffffff"; // Text color
-          context.font = "bold 12px sans-serif"; // Font style
-          context.textAlign = "center"; // Center align text
-          context.textBaseline = "middle"; // Center text vertically
-          context.fillText(randomItem, 0, 0); // Draw the text at the body's position
+          context.rotate(angle);
+          context.fillStyle = "#ffffff";
+          context.lineWidth = 1;
+          context.strokeStyle = "#ffffff";
+          context.font = "18px Arial";
+          context.textAlign = "center";
+          context.textBaseline = "middle";
+          context.fillText(randomItem, 0, 0);
           context.restore();
         }
       });
     });
 
-    // 컴포넌트 언마운트 시 정리 작업
     return () => {
       Render.stop(render);
       Runner.stop(runner);
       Engine.clear(engine);
       container.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("resize", resizeCanvas);
       textElementsRef.current = [];
       container.innerHTML = "";
     };
-  }, [data]);
+  }, [data, canvasSize]);
 
   const getRectangleSize = (text) => {
-    const baseWidth = 60;
-    const baseHeight = 20;
-    const scale = 1 + text.length / 10;
+    const fontSize = 18;
+    const paddingX = 18;
+    const paddingY = 10;
+
+    const textWidth = fontSize * text.length * 1;
+    const textHeight = fontSize;
+
     return {
-      width: baseWidth * scale,
-      height: Math.min(baseHeight, 60),
+      width: textWidth + paddingX * 2,
+      height: textHeight + paddingY * 2,
     };
   };
 

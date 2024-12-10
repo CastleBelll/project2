@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'CustomEnglishFont';
+    src: url('../fonts/GT-Flexa-Mono-Medium-Trial.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'CustomKoreanFont';
+    src: url('../fonts/FlightSansOTF-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
