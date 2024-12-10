@@ -15,11 +15,11 @@
     },
     {
       "category": "Animal",
-      "items": []
+      "items": ["식탁"]
     },
     {
       "category": "Object",
-      "items": []
+      "items": ["식탁"]
     },
     {
       "category": "Emotion",
@@ -32,15 +32,15 @@
     },
     {
       "category": "Behavior",
-      "items": []
+      "items": ["식탁"]
     },
     {
       "category": "Text",
-      "items": []
+      "items": ["식탁"]
     },
     {
       "category": "Emoji",
-      "items": []
+      "items": ["식탁"]
     }
   ]
   

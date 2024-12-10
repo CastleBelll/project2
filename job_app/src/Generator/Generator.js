@@ -1,20 +1,33 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Engine, Render, World, Bodies, Events, Runner } from "matter-js";
 import "./Generator.css";
-
-const data = [
-  { category: "Character", items: ["노정형", "정철돈", "박재성", "전진", "황광희", "김태균", "김혜자", "정실장", "강호동"] },
-  { category: "Emotion", items: ["식탁", "놀람", "만족", "어이없는 상황"] },
-];
 
 const Generator = () => {
   const containerRef = useRef(null);
   const textElementsRef = useRef([]);
   const debounceTimer = useRef(null);
+  const [data, setData] = useState([]);
+
+  // JSON 파일에서 데이터를 가져오는 useEffect
+  useEffect(() => {
+    fetch("/json/data.json")
+      .then((response) => response.json())
+      .then((jsonData) => {
+        // JSON 파일 형식에 맞게 data를 구성
+        const data = jsonData.map((item) => ({
+          category: item.category,
+          items: item.items,
+        }));
+        setData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching the JSON file:", error);
+      });
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || data.length === 0) return; // data가 비어있으면 초기화 안 함
 
     // 캔버스 크기 조정 함수
     const resizeCanvas = () => {
@@ -82,6 +95,8 @@ const Generator = () => {
 
     // 마우스 이동 시 사각형 생성 함수
     const handleMouseMove = (e) => {
+      if (data.length === 0) return; // data가 비어 있으면 함수 종료
+
       clearTimeout(debounceTimer.current);
       debounceTimer.current = setTimeout(() => {
         const rect = container.getBoundingClientRect();
@@ -174,7 +189,7 @@ const Generator = () => {
       textElementsRef.current = [];
       container.innerHTML = "";
     };
-  }, []);
+  }, [data]);
 
   const getRectangleSize = (text) => {
     const baseWidth = 60;
