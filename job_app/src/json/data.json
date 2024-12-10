@@ -1,0 +1,46 @@
+[
+    {
+      "category": "Character",
+      "items": [
+        "노정형",
+        "정철돈",
+        "박재성",
+        "전진",
+        "황광희",
+        "김태균",
+        "김혜자",
+        "정실장",
+        "강호동"
+      ]
+    },
+    {
+      "category": "Animal",
+      "items": []
+    },
+    {
+      "category": "Object",
+      "items": []
+    },
+    {
+      "category": "Emotion",
+      "items": [
+        "식탁",
+        "놀람",
+        "만족",
+        "어이없는 상황"
+      ]
+    },
+    {
+      "category": "Behavior",
+      "items": []
+    },
+    {
+      "category": "Text",
+      "items": []
+    },
+    {
+      "category": "Emoji",
+      "items": []
+    }
+  ]
+  
