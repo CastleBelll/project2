@@ -3,7 +3,7 @@ import ArchiveMain from './ArchiveMain';
 import ArchiveLeft from './ArchiveLeft';
 import ArchiveHeader from './ArchiveHeader';
 import './Archive.css';
-import data from '../json/data.json'; // 데이터 불러오기
+import data from '../json/images.json'; // 데이터 불러오기
 
 const Archive = () => {
   const [selectedItems, setSelectedItems] = useState([]); // 선택된 하위 항목들 저장

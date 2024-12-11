@@ -4,22 +4,7 @@
   height: 100%;
   background-color: #242424;
   overflow: hidden;
-}
-
-canvas {
-  display: block;
-}
-
-.text-rectangle {
-  position: absolute;
-  background-color: #242424;
-  color: #ffffff;
-  font-size: 50;
-  text-align: center;
-  border: 1px solid #FFFFFF;
-  white-space: nowrap; /* 줄바꿈 방지 */
-  box-sizing: border-box;
-  pointer-events: none;
-  transform-origin: center;
-  transition: transform 0.1s ease-in-out; /* Adds smooth rotation */
+  background: 
+    repeating-linear-gradient(to right, white 0, white 0.1px, transparent 0.5px, transparent 100px), 
+    repeating-linear-gradient(to bottom, white 0, white 0.1px, transparent 0.5px, transparent 100px);
 }

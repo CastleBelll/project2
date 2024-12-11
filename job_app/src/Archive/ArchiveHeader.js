@@ -50,6 +50,12 @@ function ArchiveHeader({ selectedItems }) {
           </CSSTransition>
         ))}
       </TransitionGroup>
+      {/* selectedItems가 비어있지 않으면 검색 버튼을 보여줌 */}
+      {selectedItems.length > 0 && (
+        <div className="search-button">
+          검색
+        </div>
+      )}
     </div>
   );
 }
