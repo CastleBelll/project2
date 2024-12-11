@@ -1,0 +1,17 @@
+/* Archive.css */
+.ArchiveMain {
+    position: relative;
+    width: 1560px;
+    height: 1020px;
+    overflow: hidden;
+    background-color: #ffffff;
+    cursor: crosshair;
+  }
+  
+  .square {
+    position: absolute;
+    background-color: #007bff;
+    width: 100px;
+    height: 100px;
+  }
+  
