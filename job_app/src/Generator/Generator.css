@@ -5,6 +5,7 @@
   background-color: #242424;
   overflow: hidden;
   background: 
-    repeating-linear-gradient(to right, white 0, white 0.1px, transparent 0.5px, transparent 100px), 
-    repeating-linear-gradient(to bottom, white 0, white 0.1px, transparent 0.5px, transparent 100px);
+  repeating-linear-gradient(to right, white 0, white 0.05px, transparent 1px, transparent 100px), 
+  repeating-linear-gradient(to bottom, white 0, white 0.05px, transparent 1px, transparent 100px);
+
 }

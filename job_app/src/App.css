@@ -29,8 +29,8 @@ body:lang(ko) {
   z-index: 1000; /* 네비게이션 바가 다른 요소 위에 오도록 설정 */
   background-color: #242424; /* 네비게이션 바 배경색 변경 */
   background: 
-    repeating-linear-gradient(to right, white 0, white 0.1px, transparent 0.4px, transparent 100px), 
-    repeating-linear-gradient(to bottom, white 0, white 0.1px, transparent 0.4px, transparent 100px);
+    repeating-linear-gradient(to right, white 0, white 0.1px, transparent 0.1px, transparent 100px), 
+    repeating-linear-gradient(to bottom, white 0, white 0.1px, transparent 0.1px, transparent 100px);
 }
 
 /* 네비게이션 링크 스타일 */

@@ -9,16 +9,26 @@ const Generator = () => {
   const [data, setData] = useState([]);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
 
-  // JSON 파일에서 데이터를 가져오는 useEffect
   useEffect(() => {
-    fetch("/json/data.json")
+    fetch("/json/images.json")
       .then((response) => response.json())
       .then((jsonData) => {
+        console.log("Fetched JSON Data:", jsonData); // JSON 데이터 확인
+
+        // jsonData를 순회하여 원하는 형태로 변환
         const data = jsonData.map((item) => ({
-          category: item.category,
-          items: item.items,
+          category: item.category,  // 카테고리 정보
+          items: Object.keys(item.category).reduce((acc, category) => {
+            // 각 category 안의 항목들을 Set에 추가하여 중복 제거
+            item.category[category].forEach((subItem) => {
+              acc.push(subItem);
+            });
+            return acc;
+          }, []),  // 중복 제거된 아이템 배열
         }));
-        setData(data);
+
+        console.log("Transformed Data:", data);  // 변환된 data 확인
+        setData(data);  // 상태 업데이트
       })
       .catch((error) => {
         console.error("Error fetching the JSON file:", error);
@@ -50,12 +60,12 @@ const Generator = () => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container || data.length === 0) return;
-  
+
     // 캔버스 초기화 및 설정
     const engine = Engine.create();
     const world = engine.world;
     engine.world.gravity.y = 1;
-  
+
     const render = Render.create({
       element: container,
       engine: engine,
@@ -67,16 +77,16 @@ const Generator = () => {
         pixelRatio: window.devicePixelRatio || 1,
       },
     });
-  
+
     Render.run(render);
     const runner = Runner.create();
     Runner.run(runner, engine);
-  
+
     // 캔버스 경계에 대한 벽 생성
     const width = canvasSize.width;
     const height = canvasSize.height;
     const wallThickness = 10;
-  
+
     const topWall = Bodies.rectangle(width / 2, 0 - wallThickness / 2, width, wallThickness, {
       isStatic: true,
       render: { fillStyle: "#ffffff" },
@@ -93,23 +103,23 @@ const Generator = () => {
       isStatic: true,
       render: { fillStyle: "#ffffff" },
     });
-  
+
     World.add(world, [topWall, bottomWall, leftWall, rightWall]);
-  
+
     // 마우스 설정
     const mouse = Mouse.create(render.canvas);
-    const mouseConstraint = MouseConstraint.create(engine, { 
+    const mouseConstraint = MouseConstraint.create(engine, {
       mouse,
-      constraint: { 
+      constraint: {
         stiffness: 0, // stiffness를 0으로 설정하여 드래그를 방지
-        render: { visible: false } // 시각적 효과를 숨길 수 있음
-      }
+        render: { visible: false }, // 시각적 효과를 숨길 수 있음
+      },
     });
     World.add(world, mouseConstraint);
-  
+
     const handleMouseMove = (e) => {
       if (data.length === 0) return;
-  
+
       clearTimeout(debounceTimer.current);
       debounceTimer.current = setTimeout(() => {
         // 화면 크기에 맞춰 마우스 위치 보정
@@ -132,6 +142,12 @@ const Generator = () => {
         const randomItem = randomCategory.items[Math.floor(Math.random() * randomCategory.items.length)] || "";
 
         if (randomItem !== "") {
+          // 이미 해당 아이템이 화면에 렌더링된 적 있는지 확인
+          const isAlreadyRendered = textElementsRef.current.some(({ body }) => body.label === randomItem);
+          if (isAlreadyRendered) {
+            return; // 이미 렌더링된 아이템은 무시
+          }
+
           const size = getRectangleSize(randomItem);
           const angle = (Math.random() - 0.5) * Math.PI; // 랜덤 각도
           const newRectangle = Bodies.rectangle(adjustedX, adjustedY, size.width, size.height, {
@@ -158,16 +174,16 @@ const Generator = () => {
         }
       },); // 디바운스 시간 간격
     };
-  
+
     container.addEventListener("mousemove", handleMouseMove);
-  
+
     // Matter.js "beforeUpdate" 이벤트
     Events.on(engine, "beforeUpdate", () => {
       const mousePos = mouse.position;
-  
+
       // 마우스 위치에 있는 물체 찾기
       const hoveredBody = Query.point(textElementsRef.current.map(({ body }) => body), mousePos);
-  
+
       // hover 효과 처리
       textElementsRef.current.forEach(({ body }) => {
         if (hoveredBody.includes(body)) {
@@ -178,7 +194,7 @@ const Generator = () => {
           body.render.strokeStyle = "#ffffff";
         }
       });
-  
+
       // 클릭 효과 처리 (왼쪽 버튼 클릭)
       if (mouseConstraint.mouse.button === 0) { // 클릭 시
         textElementsRef.current.forEach(({ body, clicked }) => {
@@ -200,6 +216,7 @@ const Generator = () => {
         });
       }
     });
+
     // 화면 밖 사각형 제거
     Events.on(engine, "beforeUpdate", () => {
       textElementsRef.current = textElementsRef.current.filter(({ body }) => {
@@ -209,7 +226,7 @@ const Generator = () => {
           y > -100 &&
           x < render.options.width + 100 &&
           y < render.options.height + 100;
-  
+
         if (!isInBounds) {
           World.remove(world, body);
           return false;
@@ -217,14 +234,14 @@ const Generator = () => {
         return true;
       });
     });
-  
+
     Events.on(render, "afterRender", () => {
       const context = render.context;
-  
+
       textElementsRef.current.forEach(({ body }) => {
         const { position, angle } = body;
         const randomItem = body.label;
-  
+
         if (randomItem) {
           context.save();
           context.translate(position.x, position.y);
@@ -239,7 +256,7 @@ const Generator = () => {
         }
       });
     });
-  
+
     return () => {
       Render.stop(render);
       Runner.stop(runner);
@@ -249,7 +266,7 @@ const Generator = () => {
       container.innerHTML = "";
     };
   }, [data, canvasSize]);
-    
+
   const getRectangleSize = (text) => {
     const fontSize = 18;
     const paddingX = 18;
