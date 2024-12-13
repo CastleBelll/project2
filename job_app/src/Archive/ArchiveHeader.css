@@ -27,7 +27,7 @@
     font-weight: bold; /* 글자 굵게 설정 */
     min-width: 40px;
     text-align: center;
-    font-size: 12px;
+    font-size: 16px;
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
     transition: transform 0.5s ease, opacity 0.5s ease;
   }
@@ -41,7 +41,7 @@
     font-weight: bold; /* 글자 굵게 설정 */
     min-width: 45px;
     text-align: center;
-    font-size: 12px;
+    font-size: 16px;
     transition: transform 0.5s ease, opacity 0.5s ease;
   }
   

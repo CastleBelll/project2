@@ -1,6 +1,7 @@
 /* 글로벌 스타일 */
 body {
   font-family: 'CustomEnglishFont', sans-serif !important;;
+  overflow: hidden;
 }
 
 /* 한글 전용 스타일 */
@@ -28,9 +29,8 @@ body:lang(ko) {
   display: flex;
   z-index: 1000; /* 네비게이션 바가 다른 요소 위에 오도록 설정 */
   background-color: #242424; /* 네비게이션 바 배경색 변경 */
-  background: 
-    repeating-linear-gradient(to right, white 0, white 0.1px, transparent 0.1px, transparent 100px), 
-    repeating-linear-gradient(to bottom, white 0, white 0.1px, transparent 0.1px, transparent 100px);
+  background-image: url('./background_square.png'); /* 이미지 파일 경로 */
+  background-repeat: repeat;  /* 가로 및 세로로 반복 */
 }
 
 /* 네비게이션 링크 스타일 */
@@ -45,6 +45,7 @@ body:lang(ko) {
 .nav-links a {
   text-decoration: none;
   color: #666666; /* 기본 색상은 회색 */
+  font-size : 16px !important;
   font-weight: bold;
   transition: color 0.3s ease, border-bottom 0.3s ease; /* 부드러운 색상 전환 및 밑줄 전환 */
 }

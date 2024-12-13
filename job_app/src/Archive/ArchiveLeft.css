@@ -85,7 +85,7 @@
   transition: all 0.1s ease;
   display: inline-block;
   min-width: 40px;
-  font-size: 12px;
+  font-size: 16px;
   box-sizing: border-box; /* border 포함하여 크기 변경 방지 */
 }
 

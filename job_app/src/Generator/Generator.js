@@ -8,34 +8,43 @@ const Generator = () => {
   const debounceTimer = useRef(null);
   const [data, setData] = useState([]);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
+  const [clickedTexts, setClickedTexts] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => setIsOpen((prev) => !prev);
+
+  useEffect(() => {
+    if (clickedTexts.length === 0) {
+      setIsOpen(false); // 배열이 비어 있으면 "open" 상태 비활성화
+    } else {
+      setIsOpen(true); // 배열에 값이 있으면 "open" 상태 활성화
+    }
+  }, [clickedTexts]);
 
   useEffect(() => {
     fetch("/json/images.json")
       .then((response) => response.json())
       .then((jsonData) => {
-        console.log("Fetched JSON Data:", jsonData); // JSON 데이터 확인
-
-        // jsonData를 순회하여 원하는 형태로 변환
         const data = jsonData.map((item) => ({
-          category: item.category,  // 카테고리 정보
+          image: item.image,  // image 필드 추가
+          title: item.title,  // title 필드 추가
+          description: item.description,  // description 필드 추가
+          category: item.category,  // category 필드 유지
           items: Object.keys(item.category).reduce((acc, category) => {
-            // 각 category 안의 항목들을 Set에 추가하여 중복 제거
             item.category[category].forEach((subItem) => {
               acc.push(subItem);
             });
             return acc;
-          }, []),  // 중복 제거된 아이템 배열
+          }, []),
         }));
-
-        console.log("Transformed Data:", data);  // 변환된 data 확인
-        setData(data);  // 상태 업데이트
+        console.log(data);
+        setData(data);
       })
       .catch((error) => {
         console.error("Error fetching the JSON file:", error);
       });
   }, []);
-
-  // 캔버스 크기 업데이트를 위한 useEffect
+  
   useEffect(() => {
     const updateCanvasSize = () => {
       const container = containerRef.current;
@@ -47,10 +56,8 @@ const Generator = () => {
       }
     };
 
-    // 초기 크기 설정
     updateCanvasSize();
 
-    // 리사이즈 이벤트 리스너 등록
     window.addEventListener("resize", updateCanvasSize);
     return () => {
       window.removeEventListener("resize", updateCanvasSize);
@@ -61,7 +68,6 @@ const Generator = () => {
     const container = containerRef.current;
     if (!container || data.length === 0) return;
 
-    // 캔버스 초기화 및 설정
     const engine = Engine.create();
     const world = engine.world;
     engine.world.gravity.y = 1;
@@ -73,7 +79,7 @@ const Generator = () => {
         width: canvasSize.width,
         height: canvasSize.height,
         wireframes: false,
-        background: "transparent",  // 배경을 투명하게 설정
+        background: "transparent",
         pixelRatio: window.devicePixelRatio || 1,
       },
     });
@@ -82,7 +88,6 @@ const Generator = () => {
     const runner = Runner.create();
     Runner.run(runner, engine);
 
-    // 캔버스 경계에 대한 벽 생성
     const width = canvasSize.width;
     const height = canvasSize.height;
     const wallThickness = 10;
@@ -106,13 +111,12 @@ const Generator = () => {
 
     World.add(world, [topWall, bottomWall, leftWall, rightWall]);
 
-    // 마우스 설정
     const mouse = Mouse.create(render.canvas);
     const mouseConstraint = MouseConstraint.create(engine, {
       mouse,
       constraint: {
-        stiffness: 0, // stiffness를 0으로 설정하여 드래그를 방지
-        render: { visible: false }, // 시각적 효과를 숨길 수 있음
+        stiffness: 0,
+        render: { visible: false },
       },
     });
     World.add(world, mouseConstraint);
@@ -122,102 +126,119 @@ const Generator = () => {
 
       clearTimeout(debounceTimer.current);
       debounceTimer.current = setTimeout(() => {
-        // 화면 크기에 맞춰 마우스 위치 보정
+        const dropZone = document.querySelector(".event-arial");
+        const container = containerRef.current;
+
+        if (!dropZone || !container) return;
+
+        const containerRect = container.getBoundingClientRect();
         const mousePos = mouse.position;
-        const scaleX = canvasSize.width / window.innerWidth;
-        const scaleY = canvasSize.height / window.innerHeight;
 
-        const adjustedX = mousePos.x * scaleX;
-        const adjustedY = mousePos.y * scaleY;
+        const mouseCanvasX = mousePos.x - containerRect.left;
+        const mouseCanvasY = mousePos.y - containerRect.top;
 
-        const navbarHeight = 60;
-        const maxWidth = 1800;
-        const maxHeight = navbarHeight + 200;
+        const dropZoneRect = dropZone.getBoundingClientRect();
+        const adjustedDropZoneRect = {
+          top: dropZoneRect.top - containerRect.top,
+          bottom: dropZoneRect.bottom - containerRect.top,
+          left: dropZoneRect.left - containerRect.left,
+          right: dropZoneRect.right - containerRect.left,
+        };
 
-        if (adjustedX < 0 || adjustedY < navbarHeight || adjustedX > maxWidth || adjustedY > maxHeight) {
-          return; // 영역 밖이면 함수 종료
-        }
+        const isMouseInsideDropZone =
+          mouseCanvasX >= adjustedDropZoneRect.left &&
+          mouseCanvasX <= adjustedDropZoneRect.right &&
+          mouseCanvasY >= adjustedDropZoneRect.top &&
+          mouseCanvasY <= adjustedDropZoneRect.bottom;
 
-        const randomCategory = data[Math.floor(Math.random() * data.length)];
-        const randomItem = randomCategory.items[Math.floor(Math.random() * randomCategory.items.length)] || "";
+        if (isMouseInsideDropZone) {
+          const randomCategory = data[Math.floor(Math.random() * data.length)];
+          const randomItem = randomCategory.items[Math.floor(Math.random() * randomCategory.items.length)] || "";
 
-        if (randomItem !== "") {
-          // 이미 해당 아이템이 화면에 렌더링된 적 있는지 확인
-          const isAlreadyRendered = textElementsRef.current.some(({ body }) => body.label === randomItem);
-          if (isAlreadyRendered) {
-            return; // 이미 렌더링된 아이템은 무시
+          if (randomItem !== "") {
+            const isAlreadyRendered = textElementsRef.current.some(({ body }) => body.label === randomItem);
+            if (isAlreadyRendered) {
+              return;
+            }
+
+            const size = getRectangleSize(randomItem);
+            const angle = (Math.random() - 0.5) * Math.PI;
+
+            const newRectangle = Bodies.rectangle(mouseCanvasX, mouseCanvasY, size.width, size.height, {
+              angle: angle,
+              chamfer: {
+                radius: [20, 20, 20, 20],
+              },
+              render: {
+                fillStyle: "#242424",
+                strokeStyle: "#ffffff",
+                lineWidth: 2,
+              },
+              restitution: 0.3,
+              friction: 0.05,
+              frictionAir: 0.05,
+              collisionFilter: {
+                group: 1,
+              },
+              label: randomItem,
+            });
+
+            World.add(world, newRectangle);
+            textElementsRef.current.push({ body: newRectangle, clicked: false });
           }
-
-          const size = getRectangleSize(randomItem);
-          const angle = (Math.random() - 0.5) * Math.PI; // 랜덤 각도
-          const newRectangle = Bodies.rectangle(adjustedX, adjustedY, size.width, size.height, {
-            angle: angle,
-            chamfer: {
-              radius: [20, 20, 20, 20],
-            },
-            render: {
-              fillStyle: "#242424",
-              strokeStyle: "#ffffff",
-              lineWidth: 2,
-            },
-            restitution: 0.3,
-            friction: 0.05,
-            frictionAir: 0.05,
-            collisionFilter: {
-              group: 1,
-            },
-            label: randomItem,
-          });
-
-          World.add(world, newRectangle);
-          textElementsRef.current.push({ body: newRectangle, clicked: false });
         }
-      },); // 디바운스 시간 간격
+      }, 100);
     };
 
     container.addEventListener("mousemove", handleMouseMove);
 
-    // Matter.js "beforeUpdate" 이벤트
+    let isClicking = false;
+
     Events.on(engine, "beforeUpdate", () => {
       const mousePos = mouse.position;
-
-      // 마우스 위치에 있는 물체 찾기
       const hoveredBody = Query.point(textElementsRef.current.map(({ body }) => body), mousePos);
-
-      // hover 효과 처리
+    
       textElementsRef.current.forEach(({ body }) => {
         if (hoveredBody.includes(body)) {
-          // 호버된 물체의 테두리 색상 변경
           body.render.strokeStyle = "#9746ff";
         } else {
-          // 기본 테두리 색상
           body.render.strokeStyle = "#ffffff";
         }
       });
-
-      // 클릭 효과 처리 (왼쪽 버튼 클릭)
-      if (mouseConstraint.mouse.button === 0) { // 클릭 시
+    
+      if (mouseConstraint.mouse.button === 0 && !isClicking) {
+        isClicking = true;
+    
         textElementsRef.current.forEach(({ body, clicked }) => {
           if (hoveredBody.includes(body)) {
             if (!clicked) {
-              // 클릭된 물체의 배경색 변경
               body.render.fillStyle = "#9746ff";
               body.render.strokeStyle = "#9746ff";
-              // 클릭된 상태로 변경
               textElementsRef.current.find((item) => item.body === body).clicked = true;
+
+              setClickedTexts((prev) => {
+                const newClickedTexts = [...prev, body.label];
+                return newClickedTexts;
+              });
             } else {
-              // 클릭된 물체를 다시 원래대로 돌려놓기
               body.render.strokeStyle = "#ffffff";
               body.render.fillStyle = "#242424";
-              // 클릭되지 않은 상태로 변경
               textElementsRef.current.find((item) => item.body === body).clicked = false;
+    
+              setClickedTexts((prev) => {
+                const newClickedTexts = prev.filter((text) => text !== body.label);
+                return newClickedTexts;
+              });
             }
           }
         });
+
+        setTimeout(() => {
+          isClicking = false;
+        }, 300);
       }
     });
 
-    // 화면 밖 사각형 제거
     Events.on(engine, "beforeUpdate", () => {
       textElementsRef.current = textElementsRef.current.filter(({ body }) => {
         const { x, y } = body.position;
@@ -248,7 +269,7 @@ const Generator = () => {
           context.rotate(angle);
           context.fillStyle = "#ffffff";
           context.lineWidth = 1;
-          context.font = "18px Arial";
+          context.font = "16px Arial";
           context.textAlign = "center";
           context.textBaseline = "middle";
           context.fillText(randomItem, 0, 0);
@@ -281,7 +302,53 @@ const Generator = () => {
     };
   };
 
-  return <div className="Generator" ref={containerRef}></div>;
+  const getClickedData = () => {
+    if (clickedTexts.length === 0) {
+      return []; // clickedTexts가 비어있으면 아무 것도 반환하지 않음
+    }
+  
+    const clickedData = data.filter((item) =>
+      item.items.some((subItem) => clickedTexts.includes(subItem))
+    );
+  
+    const randomItem = clickedData[Math.floor(Math.random() * clickedData.length)];
+  
+    return randomItem ? [{
+      image: randomItem.image || "",
+      title: randomItem.title || "",
+      category: randomItem.category || {},
+    }] : [];
+  };
+  
+
+  return (
+    <>
+      <div className="Generator" ref={containerRef}></div>
+      <div className={`event-arial ${isOpen ? "shrink" : ""}`}>
+        Drop Zone
+      </div>
+      <div
+        className={`generator-arial ${isOpen ? "open" : "not-open"}`}
+        onClick={toggleOpen}
+      >
+        <div className="content-container">
+          <div className="image-container">
+            {getClickedData().map((item, index) => (
+              <img key={index} src={`../images/${item.image}`} alt={item.title} />
+            ))}
+          </div>
+          <div className="text-container">
+            {getClickedData().map((item, index) => (
+              <div key={index}>
+                <h4>{item.title}</h4>
+                <p>{item.category.subItem}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Generator;
