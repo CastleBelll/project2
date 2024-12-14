@@ -255,7 +255,7 @@ const Generator = () => {
         }, 300);
       }
     });
-/* eslint-disable react-hooks/exhaustive-deps */
+
     Events.on(engine, "beforeUpdate", () => {
       textElementsRef.current = textElementsRef.current.filter(({ body }) => {
         const { x, y } = body.position;
@@ -304,7 +304,7 @@ const Generator = () => {
       container.innerHTML = "";
     };
   }, [data, canvasSize]);
-/* eslint-disable react-hooks/exhaustive-deps */
+
   const getRectangleSize = (text) => {
     const fontSize = 18;
     const paddingX = 18;
@@ -350,7 +350,7 @@ const Generator = () => {
     setClickedData(newClickedData);
   };
 
-  // 사각형 클릭 시 실행될 함수
+// eslint-disable-next-line react-hooks/exhaustive-deps
 const handleSquareClick = (body) => {
   // 클릭된 사각형의 정보를 가져와서 추가 작업을 수행
   console.log(`사각형 클릭됨: ${body.label}`);

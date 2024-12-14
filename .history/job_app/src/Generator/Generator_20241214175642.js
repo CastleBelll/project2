@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Engine, Render, World, Bodies, Events, Runner, Mouse, MouseConstraint, Query } from "matter-js";
-import { BsArrowRight } from 'react-icons/bs'; // 우측 화살표 아이콘 가져오기
+import { BsArrowRight } from 'react-icons/bs';
 import "./Generator.css";
 
 const Generator = () => {
@@ -11,29 +11,25 @@ const Generator = () => {
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [clickedTexts, setClickedTexts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [clickedData, setClickedData] = useState([]); // 클릭된 데이터를 상태로 관리
+  const [clickedData, setClickedData] = useState([]);
 
-  // 기존 toggleOpen 함수에서 추가 작업 수행
   const toggleOpen = () => {
-    setIsOpen(false); // "open" 상태를 false로 설정하여 닫기
-    setClickedTexts([]); // 클릭된 텍스트 배열 초기화
-    setClickedData([]); // 클릭된 텍스트 배열 초기화
+    setIsOpen(false);
+    setClickedTexts([]);
+    setClickedData([]);
 
-    // 클릭된 사각형들을 원상 복구
     textElementsRef.current.forEach(({ body }) => {
-      body.render.fillStyle = "#242424"; // 원래 색상으로 복구
-      body.render.strokeStyle = "#ffffff"; // 원래 테두리 색상으로 복구
-      body.render.strokeStyle = "#ffffff";
       body.render.fillStyle = "#242424";
-      body.clicked = false; // 클릭 상태 초기화
+      body.render.strokeStyle = "#ffffff";
+      body.clicked = false;
     });
   };
 
   useEffect(() => {
     if (clickedTexts.length === 0) {
-      setIsOpen(false); // 배열이 비어 있으면 "open" 상태 비활성화
+      setIsOpen(false);
     } else {
-      setIsOpen(true); // 배열에 값이 있으면 "open" 상태 활성화
+      setIsOpen(true);
     }
   }, [clickedTexts]);
 
@@ -42,10 +38,10 @@ const Generator = () => {
       .then((response) => response.json())
       .then((jsonData) => {
         const data = jsonData.map((item) => ({
-          image: item.image,  // image 필드 추가
-          title: item.title,  // title 필드 추가
-          description: item.description,  // description 필드 추가
-          category: item.category,  // category 필드 유지
+          image: item.image,
+          title: item.title,
+          description: item.description,
+          category: item.category,
           items: Object.keys(item.category).reduce((acc, category) => {
             item.category[category].forEach((subItem) => {
               acc.push(subItem);
@@ -53,7 +49,6 @@ const Generator = () => {
             return acc;
           }, []),
         }));
-        console.log(data);
         setData(data);
       })
       .catch((error) => {
@@ -73,12 +68,36 @@ const Generator = () => {
     };
 
     updateCanvasSize();
-
     window.addEventListener("resize", updateCanvasSize);
     return () => {
       window.removeEventListener("resize", updateCanvasSize);
     };
   }, []);
+
+    const getClickedData = useCallback(() => {
+    if (clickedTexts.length === 0) return [];
+
+    const clickedData = data.filter((item) => {
+      return clickedTexts.every((text) => {
+        return Object.values(item.category).flat().includes(text);
+      });
+    });
+
+    const randomItem = clickedData[Math.floor(Math.random() * clickedData.length)];
+
+    if (!randomItem) {
+      setIsOpen(false);
+    }
+
+    return randomItem ? [randomItem] : [];
+  }, [clickedTexts, data]);
+
+  const handleSquareClick = useCallback((body) => {
+    console.log(`사각형 클릭됨: ${body.label}`);
+    const clickedData = getClickedData();
+    console.log("클릭된 데이터:", clickedData);
+    setClickedData(clickedData);
+  }, [getClickedData]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -152,9 +171,8 @@ const Generator = () => {
         const mouseCanvasX = mousePos.x - containerRect.left;
         const mouseCanvasY = mousePos.y - containerRect.top;
 
-        // 화면 조건 확인 (너비의 80%, 높이의 top에서 80px 떨어진 높이의 20%)
         const conditionWidth = containerRect.width * 0.8;
-        const conditionTop = 80; // top에서 80px
+        const conditionTop = 80;
         const conditionHeight = containerRect.height * 0.2;
 
         const isMouseInTargetArea =
@@ -198,12 +216,12 @@ const Generator = () => {
             textElementsRef.current.push({ body: newRectangle, clicked: false });
           }
         }
-      },);
+      }, 300);
     };
     container.addEventListener("mousemove", handleMouseMove);
 
     let isClicking = false;
-
+    
     Events.on(engine, "beforeUpdate", () => {
       const mousePos = mouse.position;
       const hoveredBody = Query.point(textElementsRef.current.map(({ body }) => body), mousePos);
@@ -231,21 +249,18 @@ const Generator = () => {
                 return newClickedTexts;
               });
 
-              handleSquareClick(body);  // 추가된 부분
-
+              handleSquareClick(body);
             } else {
               body.render.strokeStyle = "#ffffff";
               body.render.fillStyle = "#242424";
               textElementsRef.current.find((item) => item.body === body).clicked = false;
-
 
               setClickedTexts((prev) => {
                 const newClickedTexts = prev.filter((text) => text !== body.label);
                 return newClickedTexts;
               });
 
-              handleSquareClick(body);  // 추가된 부분
-
+              handleSquareClick(body);
             }
           }
         });
@@ -255,7 +270,7 @@ const Generator = () => {
         }, 300);
       }
     });
-/* eslint-disable react-hooks/exhaustive-deps */
+
     Events.on(engine, "beforeUpdate", () => {
       textElementsRef.current = textElementsRef.current.filter(({ body }) => {
         const { x, y } = body.position;
@@ -303,8 +318,8 @@ const Generator = () => {
       textElementsRef.current = [];
       container.innerHTML = "";
     };
-  }, [data, canvasSize]);
-/* eslint-disable react-hooks/exhaustive-deps */
+  }, [data, canvasSize, handleSquareClick]);
+
   const getRectangleSize = (text) => {
     const fontSize = 18;
     const paddingX = 18;
@@ -318,47 +333,15 @@ const Generator = () => {
       height: textHeight + paddingY * 2,
     };
   };
-  useEffect(() => {
-    if (clickedTexts.length > 0) {
-      const newClickedData = getClickedData();
-      setClickedData(newClickedData);
-    }
-  }, [clickedTexts]); // clickedTexts 변경 시 데이터 업데이트
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getClickedData = () => {
-    if (clickedTexts.length === 0) return [];
-    
-    const clickedData = data.filter((item) => {
-      return clickedTexts.every((text) => {
-        return Object.values(item.category).flat().includes(text);
-      });
-    });
-  
-    const randomItem = clickedData[Math.floor(Math.random() * clickedData.length)];
-    
-    // randomItem이 null 또는 undefined일 때 setIsOpen(false)
-    if (!randomItem) {
-      setIsOpen(false);
-    }
-    
-    return randomItem ? [randomItem] : [];
-  };
-  
+
+
   const handleCircleClick = () => {
-    const newClickedData = getClickedData(); 
+    const newClickedData = getClickedData();
     setClickedData(newClickedData);
   };
 
-  // 사각형 클릭 시 실행될 함수
-const handleSquareClick = (body) => {
-  // 클릭된 사각형의 정보를 가져와서 추가 작업을 수행
-  console.log(`사각형 클릭됨: ${body.label}`);
-  // 예: 클릭된 사각형에 해당하는 데이터를 불러오기
-  const clickedData = getClickedData();
-  console.log("클릭된 데이터:", clickedData);
-  setClickedData(clickedData);
-};
+
 
   return (
     <>
@@ -366,9 +349,7 @@ const handleSquareClick = (body) => {
       <div className={`event-arial ${isOpen ? "shrink" : ""}`}>
         Drop Zone
       </div>
-      <div
-        className={`generator-arial ${isOpen ? "open" : "not-open"}`}
-      >
+      <div className={`generator-arial ${isOpen ? "open" : "not-open"}`}>
         <div className="main-container">
           <div className="left-container d-flex justify-content-center align-items-center">
             {isOpen && (
@@ -377,9 +358,9 @@ const handleSquareClick = (body) => {
           </div>
           <div className="content-container">
             <div className="image-container">
-              {clickedData.map((item, index) => {
-                    return <img key={index} src={`/images/${item.image}`} alt={item.title} />;
-              })}
+              {clickedData.map((item, index) => (
+                <img key={index} src={`/images/${item.image}`} alt={item.title} />
+              ))}
             </div>
             <div className="text-container">
               {clickedData.map((item, index) => (
@@ -390,7 +371,7 @@ const handleSquareClick = (body) => {
                   <div className="category-container">
                     {Object.values(item.category)
                       .flat()
-                      .filter(category => category.trim() !== "") // 공백인 항목은 제외
+                      .filter(category => category.trim() !== "") 
                       .map((category, index) => (
                         <div key={index} className="category-item">{category}</div>
                       ))}
@@ -400,7 +381,6 @@ const handleSquareClick = (body) => {
             </div>
           </div>
           <div className="right-container">
-
           </div>
         </div>
         <div className="circle" onClick={handleCircleClick}>

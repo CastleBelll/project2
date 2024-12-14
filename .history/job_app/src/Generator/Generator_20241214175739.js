@@ -255,7 +255,7 @@ const Generator = () => {
         }, 300);
       }
     });
-/* eslint-disable react-hooks/exhaustive-deps */
+
     Events.on(engine, "beforeUpdate", () => {
       textElementsRef.current = textElementsRef.current.filter(({ body }) => {
         const { x, y } = body.position;
@@ -304,7 +304,7 @@ const Generator = () => {
       container.innerHTML = "";
     };
   }, [data, canvasSize]);
-/* eslint-disable react-hooks/exhaustive-deps */
+
   const getRectangleSize = (text) => {
     const fontSize = 18;
     const paddingX = 18;
@@ -325,7 +325,6 @@ const Generator = () => {
     }
   }, [clickedTexts]); // clickedTexts 변경 시 데이터 업데이트
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getClickedData = () => {
     if (clickedTexts.length === 0) return [];
     

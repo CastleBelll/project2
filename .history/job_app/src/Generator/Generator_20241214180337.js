@@ -256,6 +256,7 @@ const Generator = () => {
       }
     });
 /* eslint-disable react-hooks/exhaustive-deps */
+
     Events.on(engine, "beforeUpdate", () => {
       textElementsRef.current = textElementsRef.current.filter(({ body }) => {
         const { x, y } = body.position;

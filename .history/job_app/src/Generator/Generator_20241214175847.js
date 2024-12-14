@@ -255,7 +255,7 @@ const Generator = () => {
         }, 300);
       }
     });
-/* eslint-disable react-hooks/exhaustive-deps */
+
     Events.on(engine, "beforeUpdate", () => {
       textElementsRef.current = textElementsRef.current.filter(({ body }) => {
         const { x, y } = body.position;
@@ -304,7 +304,7 @@ const Generator = () => {
       container.innerHTML = "";
     };
   }, [data, canvasSize]);
-/* eslint-disable react-hooks/exhaustive-deps */
+
   const getRectangleSize = (text) => {
     const fontSize = 18;
     const paddingX = 18;

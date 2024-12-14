@@ -255,7 +255,7 @@ const Generator = () => {
         }, 300);
       }
     });
-/* eslint-disable react-hooks/exhaustive-deps */
+
     Events.on(engine, "beforeUpdate", () => {
       textElementsRef.current = textElementsRef.current.filter(({ body }) => {
         const { x, y } = body.position;
@@ -303,8 +303,8 @@ const Generator = () => {
       textElementsRef.current = [];
       container.innerHTML = "";
     };
-  }, [data, canvasSize]);
-/* eslint-disable react-hooks/exhaustive-deps */
+  }, [data, canvasSize, handleSquareClick]);
+
   const getRectangleSize = (text) => {
     const fontSize = 18;
     const paddingX = 18;
@@ -323,9 +323,8 @@ const Generator = () => {
       const newClickedData = getClickedData();
       setClickedData(newClickedData);
     }
-  }, [clickedTexts]); // clickedTexts 변경 시 데이터 업데이트
+  }, [clickedTexts, getClickedData]); // clickedTexts 변경 시 데이터 업데이트
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getClickedData = () => {
     if (clickedTexts.length === 0) return [];
     
@@ -351,7 +350,7 @@ const Generator = () => {
   };
 
   // 사각형 클릭 시 실행될 함수
-const handleSquareClick = (body) => {
+const handleSquareClick = useCallback((body) => {
   // 클릭된 사각형의 정보를 가져와서 추가 작업을 수행
   console.log(`사각형 클릭됨: ${body.label}`);
   // 예: 클릭된 사각형에 해당하는 데이터를 불러오기
