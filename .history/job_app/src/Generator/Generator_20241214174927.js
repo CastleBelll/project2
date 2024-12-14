@@ -74,31 +74,6 @@ const Generator = () => {
     };
   }, []);
 
-  const getClickedData = useCallback(() => {
-    if (clickedTexts.length === 0) return [];
-
-    const clickedData = data.filter((item) => {
-      return clickedTexts.every((text) => {
-        return Object.values(item.category).flat().includes(text);
-      });
-    });
-
-    const randomItem = clickedData[Math.floor(Math.random() * clickedData.length)];
-
-    if (!randomItem) {
-      setIsOpen(false);
-    }
-
-    return randomItem ? [randomItem] : [];
-  }, [clickedTexts, data]);
-
-  const handleSquareClick = useCallback((body) => {
-    console.log(`사각형 클릭됨: ${body.label}`);
-    const clickedData = getClickedData();
-    console.log("클릭된 데이터:", clickedData);
-    setClickedData(clickedData);
-  }, [getClickedData]);
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container || data.length === 0) return;
@@ -221,7 +196,14 @@ const Generator = () => {
     container.addEventListener("mousemove", handleMouseMove);
 
     let isClicking = false;
-    
+
+    const handleSquareClick = useCallback((body) => {
+      console.log(`사각형 클릭됨: ${body.label}`);
+      const clickedData = getClickedData();
+      console.log("클릭된 데이터:", clickedData);
+      setClickedData(clickedData);
+    }, [getClickedData]);
+
     Events.on(engine, "beforeUpdate", () => {
       const mousePos = mouse.position;
       const hoveredBody = Query.point(textElementsRef.current.map(({ body }) => body), mousePos);
@@ -334,7 +316,23 @@ const Generator = () => {
     };
   };
 
+  const getClickedData = useCallback(() => {
+    if (clickedTexts.length === 0) return [];
 
+    const clickedData = data.filter((item) => {
+      return clickedTexts.every((text) => {
+        return Object.values(item.category).flat().includes(text);
+      });
+    });
+
+    const randomItem = clickedData[Math.floor(Math.random() * clickedData.length)];
+
+    if (!randomItem) {
+      setIsOpen(false);
+    }
+
+    return randomItem ? [randomItem] : [];
+  }, [clickedTexts, data]);
 
   const handleCircleClick = () => {
     const newClickedData = getClickedData();

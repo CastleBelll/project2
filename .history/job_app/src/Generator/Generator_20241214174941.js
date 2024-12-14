@@ -74,24 +74,6 @@ const Generator = () => {
     };
   }, []);
 
-  const getClickedData = useCallback(() => {
-    if (clickedTexts.length === 0) return [];
-
-    const clickedData = data.filter((item) => {
-      return clickedTexts.every((text) => {
-        return Object.values(item.category).flat().includes(text);
-      });
-    });
-
-    const randomItem = clickedData[Math.floor(Math.random() * clickedData.length)];
-
-    if (!randomItem) {
-      setIsOpen(false);
-    }
-
-    return randomItem ? [randomItem] : [];
-  }, [clickedTexts, data]);
-
   const handleSquareClick = useCallback((body) => {
     console.log(`사각형 클릭됨: ${body.label}`);
     const clickedData = getClickedData();
@@ -334,7 +316,23 @@ const Generator = () => {
     };
   };
 
+  const getClickedData = useCallback(() => {
+    if (clickedTexts.length === 0) return [];
 
+    const clickedData = data.filter((item) => {
+      return clickedTexts.every((text) => {
+        return Object.values(item.category).flat().includes(text);
+      });
+    });
+
+    const randomItem = clickedData[Math.floor(Math.random() * clickedData.length)];
+
+    if (!randomItem) {
+      setIsOpen(false);
+    }
+
+    return randomItem ? [randomItem] : [];
+  }, [clickedTexts, data]);
 
   const handleCircleClick = () => {
     const newClickedData = getClickedData();
