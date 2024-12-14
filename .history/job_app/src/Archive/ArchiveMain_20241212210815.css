@@ -1,0 +1,10 @@
+/* Archive.css */
+.ArchiveMain {
+    position: relative;
+    width: 1560px;
+    height: 1020px;
+    overflow: hidden;
+    background-color: #6a6a6a;
+    cursor: crosshair;
+  }
+  

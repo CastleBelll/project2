@@ -1,0 +1,117 @@
+.Generator {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #242424;
+  overflow: hidden;
+  background-image: url('../background_square.png');
+  background-repeat: repeat;
+}
+
+.event-arial {
+  position: absolute;
+  pointer-events: none;
+  top: 80px;
+  width: 80%;
+  left: 10%;
+  max-width: 80%;  /* 기본적으로 80%로 설정 */
+  min-height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #666666;
+  border: 1px solid #666666;
+  background-color: transparent;
+  transition: width 0.5s ease; /* 너비 변화만 부드럽게 */
+}
+
+.event-arial.shrink {
+  width: calc(100% - 45%); /* generator-arial이 30%일 때 event-arial은 나머지 70% */
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row; /* 좌우로 배치 */
+}
+
+.left-container {
+  flex: 1;
+  min-width: 15%;
+}
+
+.right-container {
+  flex: 1;
+  min-width: 15%;
+}
+
+.content-container {
+  flex: 1;
+  min-width: 70%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 배치 */
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.generator-arial {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 배치 */
+  background-color: white;
+  min-width: 40px;
+  min-height: 60%;
+  transform-origin: right;
+  transition: width 0.5s ease; /* 너비 변화만 부드럽게 */
+}
+
+.generator-arial.open {
+  width: 28%; /* open 상태에서의 width */
+}
+
+.generator-arial.not-open {
+  width: 40px; /* not-open 상태에서의 width */
+}
+
+/* 이미지 컨테이너 */
+.image-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.image-container img {
+  max-width: 100%; /* 이미지 크기를 부모 크기에 맞게 자동 조정 */
+  height: auto;
+  object-fit: contain; /* 이미지 비율 유지하며 공간에 맞게 조정 */
+  max-height: 250px; /* 이미지 크기를 더 작게 제한 */
+  margin: 5px;
+}
+
+/* 텍스트 컨테이너 */
+.text-container {
+  flex: 1;
+  padding: 10px;
+  overflow-y: hidden; /* 텍스트가 많을 경우 스크롤 가능 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.text-container h4 {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.text-container p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
