@@ -1,0 +1,62 @@
+
+  .info-container {
+    position: fixed;  /* fixed로 설정하여 body를 기준으로 절대 위치 지정 */
+    top: 0;
+    left: 0;
+    flex-direction: column; /* 좌우로 배치 */
+    width: 100vw;   /* 화면 전체 너비 */
+    height: 100vh;  /* 화면 전체 높이 */
+    background-color: #ffffff;  /* 배경색 설정 */
+    display: flex;
+    z-index: 3000;  /* 상위 모든 컴포넌트들 위에 표시 */
+    overflow: auto;  /* 내용이 넘칠 경우 스크롤 가능하도록 설정 */
+  }
+  
+  .top-container {
+    min-height: 61px;
+    max-height: 61px;
+    border-bottom: 1px solid black;
+  }
+  
+  .archive-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60%;  /* 최대 너비 60%로 제한 */
+    margin: 0 auto;  /* 가운데 정렬 */
+    padding: 20px;
+    overflow-wrap: break-word;  /* 텍스트가 넘칠 경우 줄바꿈 처리 */
+  }
+  
+  .image-container {
+    width: 100%;
+    max-width: 500px;  /* 이미지 최대 너비 제한 */
+    margin-bottom: 20px;
+  }
+  
+  .content-container {
+    width: 100%;
+  }
+  
+  .title-container {
+    margin-bottom: 10px;
+  }
+  
+  .category-container {
+    margin-bottom: 10px;
+  }
+  
+  .description-container {
+    margin-top: 10px;
+  }
+  
+  .archive-info h2 {
+    font-size: 24px;
+    word-wrap: break-word;  /* 제목이 길 경우 줄바꿈 처리 */
+  }
+  
+  .archive-info p {
+    font-size: 16px;
+    word-wrap: break-word;  /* 텍스트가 넘칠 경우 줄바꿈 처리 */
+  }
+  

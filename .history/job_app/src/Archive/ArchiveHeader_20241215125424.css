@@ -1,0 +1,70 @@
+.archive-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    min-height: 60px; /* 최소 높이를 60px로 설정 */
+    background-color: #ffffff; /* 배경색을 추가 */
+    border-bottom: 1px solid #000000; /* 하단 경계선 */
+    overflow-x: hidden; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 아이템들이 한 줄에 있도록 설정 */
+  }
+  
+  /* 기존의 selected-items-container 스타일 유지 */
+  .selected-items-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px; /* 아이템 사이의 간격 */
+    overflow-x: auto; /* 아이템이 넘칠 경우 스크롤 */
+  }
+  
+  /* 기존의 selected-item 스타일 유지 */
+  .selected-item {
+    padding: 4px 6px;
+    background-color: #2DFF2D; /* 선택된 아이템의 배경색 */
+    border-radius: 50px;
+    font-weight: bold; /* 글자 굵게 설정 */
+    min-width: 40px;
+    text-align: center;
+    font-size: 16px;
+    z-index: 5000;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .search-button {
+    padding: 4px 6px;
+    margin-left: 5px;
+    background-color: #000000; /* 선택된 아이템의 배경색 */
+    color: white;
+    border-radius: 60px;
+    font-weight: bold; /* 글자 굵게 설정 */
+    min-width: 45px;
+    text-align: center;
+    font-size: 16px;
+    z-index: 5000;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+/* Enter 애니메이션 */
+.item-enter {
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .item-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  /* Exit 애니메이션 */
+  .item-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .item-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }

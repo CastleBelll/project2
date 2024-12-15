@@ -1,0 +1,130 @@
+/* 글로벌 스타일 */
+body {
+  font-family: 'CustomEnglishFont', sans-serif !important;;
+  overflow: hidden;
+}
+
+/* 한글 전용 스타일 */
+body:lang(ko) {
+  font-family: 'CustomKoreanFont', sans-serif !important;;
+}
+/* 전체 앱 컨테이너 */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  background-color: #242424; /* 기본 배경색을 #242424로 변경 */
+}
+
+/* 네비게이션 바 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  z-index: 1000; /* 네비게이션 바가 다른 요소 위에 오도록 설정 */
+  background-color: #242424; /* 네비게이션 바 배경색 변경 */
+  background-image: url('./background_square.png'); /* 이미지 파일 경로 */
+  background-repeat: repeat;  /* 가로 및 세로로 반복 */
+}
+
+/* Generator 활성화 시 배경 이미지 적용 */
+body.generator-active .navbar {
+  background-image: url('./background_square.png'); /* Generator 활성화 시 배경 이미지 */
+  background-repeat: repeat; /* 가로 및 세로로 반복 */
+  background-color: #242424; /* 기본 배경색도 유지 */
+}
+
+/* Archive 활성화 시 배경 이미지 제거 */
+body.archive-active .navbar {
+  background-image: none; /* Archive 활성화 시 배경 이미지 제거 */
+  background-color: #ffffff; /* 배경색을 흰색으로 설정 */
+  width: 300px;  /* Archive 클릭 시 너비를 300px로 줄임 */
+}
+
+/* 네비게이션 링크 스타일 */
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-left : 60px;
+  justify-content: space-between; /* 링크를 양쪽 끝에 배치 */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #666666; /* 기본 색상은 회색 */
+  font-size : 16px !important;
+  font-weight: bold;
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* 부드러운 색상 전환 및 밑줄 전환 */
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #ffffff !important; /* 선택 및 활성화 상태에서도 글씨 색상을 흰색으로 고정 */
+  text-decoration: underline; /* 밑줄 추가 */
+  text-decoration-color: #9746ff; /* 밑줄 색상 보라색으로 설정 */
+  text-underline-offset: 5px; /* 밑줄과 글자 사이 간격 조정 */
+  text-decoration-thickness: 2px; /* 밑줄 두께를 2px로 설정 */
+  z-index: 4000; /* z-index로 navbar 아래로 위치하도록 설정 */
+}
+
+/* 콘텐츠 영역 */
+.content {
+  position: absolute; /* content를 absolute로 설정하여 navbar와 겹치게 함 */
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  background-color: #242424; /* 콘텐츠 배경색 변경 */
+}
+
+.content.container{
+  margin : 0;
+  padding:0;
+}
+
+/* 검색 아이콘 스타일 */
+.search-icon {
+  font-size: 22px;
+  margin-right: 85px;
+  color: #ffffff; /* 아이콘 색상 흰색 */
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: none !important;
+  }
+}
+
+/* Generator 활성화 시 배경색 */
+body.generator-active .app-container,
+body.generator-active .navbar,
+body.generator-active .content {
+  background-color: #242424; /* Generator가 활성화된 경우 배경색을 통일 */
+}
+
+/* Archive 활성화 시 흰색 테마 */
+body.archive-active .app-container,
+body.archive-active .navbar,
+body.archive-active .content {
+  background-color: #ffffff; /* 배경을 흰색으로 변경 */
+}
+
+body.archive-active .nav-links a {
+  color: #333333 !important; /* 링크 색상을 어두운 회색으로 변경 */
+}
+
+body.archive-active .nav-links a:hover,
+body.archive-active .nav-links .active {
+  color: #000000 !important; /* 링크 색상을 검은색으로 변경 */
+  text-decoration-color: #2DFF2D; /* 밑줄 색상을 검은색으로 설정 */
+}

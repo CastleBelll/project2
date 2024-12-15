@@ -1,0 +1,33 @@
+/* ArchiveInfo.css */
+.archive-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #242424; /* 배경색 설정 */
+    color: white; /* 텍스트 색상 */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* 다른 콘텐츠 위에 표시되도록 z-index 설정 */
+  }
+  
+  .archive-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .archive-info img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+  
+  .archive-info p {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  

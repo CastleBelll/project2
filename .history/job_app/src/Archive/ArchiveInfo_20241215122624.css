@@ -1,0 +1,75 @@
+.info-container {
+    position: fixed;  /* fixed로 설정하여 body를 기준으로 절대 위치 지정 */
+    top: 0;
+    left: 0;
+    flex-direction: column; /* 좌우로 배치 */
+    width: 100vw;   /* 화면 전체 너비 */
+    height: 100vh;  /* 화면 전체 높이 */
+    background-color: #ffffff;  /* 배경색 설정 */
+    display: flex;
+    z-index: 3000;  /* 상위 모든 컴포넌트들 위에 표시 */
+    overflow: auto;  /* 내용이 넘칠 경우 스크롤 가능하도록 설정 */
+  }
+  
+  .top-container {
+    min-height: 61px;
+    max-height: 61px;
+    border-bottom: 1px solid black;
+  }
+  
+  .archive-info {
+    display: flex;
+    flex-direction: column;  /* 세로로 배치 */
+    justify-content: center;  /* 콘텐츠를 세로로 정렬 */
+    align-items: center;  /* 가운데 정렬 */
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;  /* 최대 너비 제한 */
+    margin: 20px auto;  /* 위와 아래에 20px 여백, 좌우는 자동 정렬 */
+    padding: 20px 0;  /* 위와 아래에 20px 여백, 좌우는 0 */
+    box-sizing: border-box;  /* padding이 포함된 크기 계산 */
+  }
+  
+  .image-container {
+    width: 100%;
+    max-width: 800px;  /* 이미지 최대 너비 제한 */
+    margin-bottom: 20px;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+    justify-content: flex-start; /* 위에서 아래로 정렬 */
+    align-items: center;  /* 가운데 정렬 */
+    width: 100%;
+    max-width: 100%;  /* 최대 너비를 100%로 설정 */
+    padding: 20px 0;  /* 위와 아래 여백을 20px로 설정, 좌우는 0 */
+    box-sizing: border-box;  /* padding이 포함된 크기 계산 */
+  }
+  
+  .title-container {
+    margin-bottom: 10px;
+    font-size: 36px;
+    word-wrap: break-word;  /* 제목이 길 경우 줄바꿈 처리 */
+    text-align: center;  /* 텍스트 가운데 정렬 */
+  }
+  
+  .category-container {
+    /* flex: 1 1; */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+    max-height: 100%;
+    flex-wrap: wrap;
+}
+  
+.description-container {
+    margin-top: 40px;
+    text-align: center;
+}
+  
+  .archive-info p {
+    font-size: 20px;
+    word-wrap: break-word;  /* 텍스트가 넘칠 경우 줄바꿈 처리 */
+  }

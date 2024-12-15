@@ -1,0 +1,51 @@
+.content-container {
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+    justify-content: flex-start; /* 위에서 아래로 정렬 */
+    align-items: center;  /* 가운데 정렬 */
+    width: 100%;
+    max-width: 100%;  /* 최대 너비를 100%로 설정 */
+    padding: 20px 0;  /* 위와 아래 여백을 20px로 설정, 좌우는 0 */
+    box-sizing: border-box;  /* padding이 포함된 크기 계산 */
+  }
+  
+  .title-container, .category-container, .description-container {
+    width: 100%;  /* 각 구역을 100%로 설정하여 유동적 */
+    text-align: center;  /* 텍스트 가운데 정렬 */
+    margin-bottom: 10px;  /* 구역 사이 간격 */
+    flex: 1;  /* 각 항목이 같은 비율로 크기를 차지하도록 설정 */
+  }
+  
+  .archive-info {
+    display: flex;
+    flex-direction: column;  /* 세로로 배치 */
+    justify-content: center;  /* 콘텐츠를 세로로 정렬 */
+    align-items: center;  /* 가운데 정렬 */
+    width: 100%;
+    max-width: 1000px;  /* 최대 너비 제한 */
+    margin: 0 auto;  /* 가운데 정렬 */
+    padding: 20px;
+    box-sizing: border-box;  /* padding이 포함된 크기 계산 */
+    overflow-wrap: break-word;  /* 텍스트가 넘칠 경우 줄바꿈 처리 */
+  }
+  
+  .image-container {
+    width: 100%;
+    max-width: 500px;  /* 이미지 최대 너비 */
+    margin-bottom: 20px;  /* 이미지와 내용 사이 간격 */
+  }
+  
+  .archive-info h2 {
+    font-size: 24px;
+    word-wrap: break-word;  /* 제목이 길 경우 줄바꿈 처리 */
+  }
+  
+  .archive-info p {
+    font-size: 16px;
+    word-wrap: break-word;  /* 텍스트가 넘칠 경우 줄바꿈 처리 */
+  }
+  
+  .category-item {
+    padding: 5px 0;
+  }
+  

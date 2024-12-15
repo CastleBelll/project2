@@ -1,0 +1,19 @@
+.archive-main {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 화면 전체 높이 */
+  background-color: #f5f5f5; /* 배경색 */
+  background-image: url('../background_square.png'); /* Generator 활성화 시 배경 이미지 */
+  background-repeat: repeat; /* 가로 및 세로로 반복 */
+  overflow: hidden; /* 넘치는 이미지는 숨김 */
+}
+
+/* 이미지 천천히 나타나는 효과 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
