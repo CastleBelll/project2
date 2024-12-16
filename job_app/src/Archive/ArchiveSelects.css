@@ -1,0 +1,30 @@
+.archive-selects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* 배경색 */
+    background-image: url('../background_square2.png'); /* Generator 활성화 시 배경 이미지 */
+    background-repeat: repeat; /* 가로 및 세로로 반복 */
+    height: 100vh; /* 화면 높이를 가득 채움 */
+  }
+  
+  .swiper-container {
+    width: 80%; /* 슬라이드 크기를 설정하여 화면에 맞게 조정 */
+    height: 80%; /* 슬라이드 높이 설정 */
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 슬라이드 간격을 줄여서 이미지들이 겹치도록 만듦 */
+    transition: transform 0.3s ease;
+    transform: scale(1.2); /* 살짝 크기를 줄여서 겹치게 함 */
+  }
+
+  .carousel-image {
+    width: 100%; /* 이미지의 너비를 슬라이드 크기와 맞춤 */
+    height: auto; /* 이미지의 높이를 자동으로 조정 */
+    object-fit: cover; /* 이미지가 비율에 맞게 잘리도록 설정 */
+  }
+  

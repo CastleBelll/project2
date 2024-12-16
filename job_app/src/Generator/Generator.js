@@ -154,7 +154,7 @@ const Generator = () => {
 
         // 화면 조건 확인 (너비의 80%, 높이의 top에서 80px 떨어진 높이의 20%)
         const conditionWidth = containerRect.width * 0.8;
-        const conditionTop = 80; // top에서 80px
+        const conditionTop = 100; // top에서 80px
         const conditionHeight = containerRect.height * 0.2;
 
         const isMouseInTargetArea =
@@ -178,7 +178,7 @@ const Generator = () => {
             const newRectangle = Bodies.rectangle(mouseCanvasX, mouseCanvasY, size.width, size.height, {
               angle: angle,
               chamfer: {
-                radius: [20, 20, 20, 20],
+                radius: [14, 14, 14, 14],
               },
               render: {
                 fillStyle: "#242424",
@@ -307,8 +307,8 @@ const Generator = () => {
 /* eslint-disable react-hooks/exhaustive-deps */
   const getRectangleSize = (text) => {
     const fontSize = 18;
-    const paddingX = 18;
-    const paddingY = 10;
+    const paddingX = 12;
+    const paddingY = 5;
 
     const textWidth = fontSize * text.length * 1;
     const textHeight = fontSize;

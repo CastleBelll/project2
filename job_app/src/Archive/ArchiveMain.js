@@ -15,73 +15,80 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
 
   useEffect(() => {
     // 이미지 랜덤 위치와 크기 설정
-    const numImages = 10; // 이미지 개수
+    const numImages = 160;
     const newImages = [];
     for (let i = 0; i < numImages; i++) {
-      const randomX = Math.random() * 10 - 5; // -5 ~ 5 사이의 랜덤 X 좌표
-      const randomY = Math.random() * 10 - 5; // -5 ~ 5 사이의 랜덤 Y 좌표
-      const randomSize = Math.random() * 1 + 0.5; // 0.5 ~ 1.5 사이의 랜덤 크기
-
+      const randomX = Math.random() * 10 - 10;
+      const randomY = Math.random() * 10 - 10;
+      const randomSize = Math.random() * 1 + 0.5;
+  
       newImages.push({
         id: i,
-        position: [randomX - offsetRef.current.x / 100, randomY - offsetRef.current.y / 100, 0], // 오프셋 적용
-        size: randomSize, // 랜덤 크기
-        texture: `/images/${i + 1}.png`, // 텍스처 경로
+        position: [randomX - offsetRef.current.x / 100, randomY - offsetRef.current.y / 100, 0],
+        size: randomSize,
+        texture: `/images/${i + 1}.png`,
       });
     }
-    setImages(newImages);
+  
+    // 20~30개 이미지 랜덤 선택
+    const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 20);
+    setImages(selectedImages);
   }, []);
 
   useEffect(() => {
-    // 씬, 카메라, 렌더러 설정
-    const scene = new THREE.Scene();
-    const aspect = window.innerWidth / window.innerHeight;
+  // 씬, 카메라, 렌더러 설정
+  const scene = new THREE.Scene();
+  const aspect = window.innerWidth / window.innerHeight;
 
-    // OrthographicCamera로 변경
-    const camera = new THREE.OrthographicCamera(
-      -aspect * 5, // 왼쪽
-      aspect * 5,  // 오른쪽
-      5,           // 위쪽
-      -5,          // 아래쪽
-      0.1,         // 가까운 평면
-      1000         // 먼 평면
-    );
-    cameraRef.current = camera; // 카메라 참조 저장
-    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0); // 배경을 투명하게 설정
+  const camera = new THREE.OrthographicCamera(
+    -aspect * 5,
+    aspect * 5,
+    5,
+    -5,
+    0.1,
+    1000
+  );
+  cameraRef.current = camera;
+  const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x000000, 0);
 
-    // 카메라 위치 설정
-    camera.position.z = 5;
+  camera.position.z = 5;
 
-    // 랜덤 위치에 이미지들 추가
-    const textureLoader = new THREE.TextureLoader();
-    const planes = [];
-    images.forEach(({ id, position, size, texture }) => {
-      const imageTexture = textureLoader.load(texture);
-      const geometry = new THREE.PlaneGeometry(1, 1);
+  const textureLoader = new THREE.TextureLoader();
+  const planes = [];
+  images.forEach(({ id, position, size, texture }) => {
+    const imageTexture = textureLoader.load(texture, (loadedTexture) => {
+      const image = loadedTexture.image;
+      const aspectRatio = image.width / image.height;
+
+      const geometry = new THREE.PlaneGeometry(aspectRatio, 1); // 비율 유지
       const material = new THREE.MeshBasicMaterial({
-        map: imageTexture,
+        map: loadedTexture,
         transparent: true,
         opacity: 1,
       });
-      const plane = new THREE.Mesh(geometry, material);
-      plane.position.set(...position); // 랜덤 위치 설정
-      plane.scale.set(size, size, 1); // 랜덤 크기 설정
-      plane.userData = { id }; // id를 userData에 저장하여 나중에 사용
 
+      const plane = new THREE.Mesh(geometry, material);
+      plane.position.set(...position);
+
+      // 고정 크기 또는 배율 적용
+      const fixedScale = 2; // 원하는 크기에 맞게 조정
+      plane.scale.set(fixedScale, fixedScale, 1);
+
+      plane.userData = { id };
       planes.push(plane);
       scene.add(plane);
     });
-    planesRef.current = planes; // planes 참조 저장
+  });
+  planesRef.current = planes;
 
-    // 렌더링 함수
-    const animate = () => {
-      requestAnimationFrame(animate);
-      renderer.render(scene, camera);
-    };
+  const animate = () => {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  };
 
-    animate(); // 애니메이션 루프 시작
+  animate();
 
     // 마우스 이벤트 처리
     const handleMouseMove = (event) => {
@@ -146,20 +153,21 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
       previousMousePosition = { x: event.clientX, y: event.clientY };
     };
 
-    // wheel 이벤트를 통한 배율 조정
     const handleWheel = (event) => {
+      const canvas = canvasRef.current; // canvasRef를 통해 캔버스 참조 가져오기
+      if (!canvas.contains(event.target)) return; // canvas에 마우스가 있을 때만 작동
       if (event.deltaY < 0) {
-        zoomRef.current *= 1.1; // 확대
+        zoomRef.current *= 1.1;
       } else {
-        zoomRef.current *= 0.9; // 축소
+        zoomRef.current *= 0.9;
       }
-
-      // 카메라 비율 적용
-      camera.left = -aspect * 5 * zoomRef.current;
-      camera.right = aspect * 5 * zoomRef.current;
-      camera.top = 5 * zoomRef.current;
-      camera.bottom = -5 * zoomRef.current;
-      camera.updateProjectionMatrix();
+  
+      const aspect = window.innerWidth / window.innerHeight;
+      cameraRef.current.left = -aspect * 5 * zoomRef.current;
+      cameraRef.current.right = aspect * 5 * zoomRef.current;
+      cameraRef.current.top = 5 * zoomRef.current;
+      cameraRef.current.bottom = -5 * zoomRef.current;
+      cameraRef.current.updateProjectionMatrix();
     };
 
     // 윈도우 사이즈 변경 시 카메라 비율 업데이트

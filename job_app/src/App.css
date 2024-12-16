@@ -25,7 +25,7 @@ body:lang(ko) {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 100px;
   display: flex;
   z-index: 1001; /* 네비게이션 바가 다른 요소 위에 오도록 설정 */
   background-color: #242424; /* 네비게이션 바 배경색 변경 */
@@ -44,7 +44,7 @@ body.generator-active .navbar {
 body.archive-active .navbar {
   background-image: none; /* Archive 활성화 시 배경 이미지 제거 */
   background-color: #ffffff; /* 배경색을 흰색으로 설정 */
-  width: 300px;  /* Archive 클릭 시 너비를 300px로 줄임 */
+  width: 399px;  /* Archive 클릭 시 너비를 300px로 줄임 */
 }
 
 /* 네비게이션 링크 스타일 */
@@ -59,7 +59,7 @@ body.archive-active .navbar {
 .nav-links a {
   text-decoration: none;
   color: #666666; /* 기본 색상은 회색 */
-  font-size : 16px !important;
+  font-size : 24px !important;
   font-weight: bold;
   transition: color 0.3s ease, border-bottom 0.3s ease; /* 부드러운 색상 전환 및 밑줄 전환 */
 }

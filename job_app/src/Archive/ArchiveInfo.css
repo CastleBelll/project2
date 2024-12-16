@@ -13,14 +13,14 @@
   
   .top-container {
     display: flex;
-    min-height: 61px;
-    max-height: 61px;
+    min-height: 101px;
+    max-height: 101px;
     width: 100%;
   }
   
   .top-left-info {
-    min-width: 260px;
-    max-width: 260px;
+    min-width: 360px;
+    max-width: 360px;
     min-height: 61px;
     margin-left: 20px;
     margin-right: 20px;
@@ -39,7 +39,7 @@
   }
   .divider {
     width: 1px;  /* 세로선의 너비 */
-    height: 61px;  /* 선의 높이 */
+    height: 101px;  /* 선의 높이 */
     background-color: black;  /* 선의 색상 */
   }
 
@@ -58,7 +58,7 @@
   
   .image-container-info {
     width: 100%;
-    max-width: 500px;  /* 이미지 최대 너비 제한 */
+    max-width: 600px;  /* 이미지 최대 너비 제한 */
     margin-bottom: 20px;
   }
   

@@ -1,59 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { BsArrowLeft } from 'react-icons/bs'; // 우측 화살표 아이콘 가져오기
-import './ArchiveInfo.css'; // 스타일을 별도의 CSS 파일로 관리할 수 있습니다.
+import { BsArrowLeft } from 'react-icons/bs';
+import './ArchiveInfo.css';
 
-const ArchiveInfo = ({ selectedImageInfo }) => {
-  const [imageData, setImageData] = useState(null);  // 이미지 데이터를 저장할 상태
+const ArchiveInfo = ({ selectedImageInfo, setSelectedImageInfo }) => {
+  const [imageData, setImageData] = useState(null);
 
-  // JSON 파일을 fetch로 불러오는 useEffect
   useEffect(() => {
-    console.log("selectedImageInfo: ", selectedImageInfo);  // selectedImageInfo 값 확인
-    fetch('/json/images.json')  // public 폴더에서 JSON 파일을 불러옴
+    fetch('/json/images.json')
       .then((response) => response.json())
       .then((jsonData) => {
-        console.log("Fetched JSON data: ", jsonData);  // JSON 데이터 확인
-        // selectedImageInfo를 +1하여 해당 이미지를 찾고 상태에 저장
         const selectedImage = jsonData.find((item) => item.image === `${selectedImageInfo + 1}.png`);
         if (selectedImage) {
-          setImageData(selectedImage);  // 해당 데이터를 상태에 설정
+          setImageData(selectedImage);
         } else {
           console.error("Selected image not found: ", selectedImageInfo);
         }
       })
       .catch((error) => console.error('Error fetching the JSON file:', error));
-  }, [selectedImageInfo]);  // selectedImageInfo가 변경될 때마다 실행
+  }, [selectedImageInfo]);
 
-  // 이미지 데이터가 없으면 로딩 중일 수 있으므로 조건 처리
   if (!imageData) {
     return <div></div>;
   }
 
-  // category를 값만 반복하여 표시
-  const renderCategory = (category) => {
-    return Object.values(category)
-      .flat()
-      .filter((category) => category.trim() !== "") // 공백인 항목은 제외
-      .map((category, index) => (
-        <div key={index} className="category-item-info">
-          {category}
-        </div>
-      ));
-  };
-
-  // 뒤로 가기 함수
+  // 화살표 버튼 클릭 시 selectedImageInfo를 null로 설정
   const handleBackClick = () => {
-    window.location.href = '/archive';  // /archive 경로로 이동
+    setSelectedImageInfo(null);
   };
 
   return (
     <div className="info-container">
       <div className="top-container">
         <div className="top-left-info"></div>
-        <div className="divider"></div>  {/* 구분선 추가 */}
+        <div className="divider"></div>
         <div className="top-right-info">
           <BsArrowLeft
             style={{ fontSize: '24px', fontWeight: 'bold', cursor: 'pointer' }}
-            onClick={handleBackClick}  // 클릭 시 /archive로 이동
+            onClick={handleBackClick} // 클릭 시 selectedImageInfo를 null로 설정
           />
           {imageData.title}
         </div>
@@ -71,7 +54,11 @@ const ArchiveInfo = ({ selectedImageInfo }) => {
             {imageData.title}
           </div>
           <div className="category-container-info">
-            {renderCategory(imageData.category)}
+            {Object.values(imageData.category).flat().map((category, index) => (
+              <div key={index} className="category-item-info">
+                {category}
+              </div>
+            ))}
           </div>
           <div className="description-container-info">
             <p>{imageData.description}</p>

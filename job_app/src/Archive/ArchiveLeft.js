@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ArchiveLeft.css';
 
-function ArchiveLeft({ data, onSubItemClick }) {
-  const [selectedItems, setSelectedItems] = useState([]); // 선택된 항목 상태
+function ArchiveLeft({ data, onSubItemClick, selectedItems }) {
+  const [localSelectedItems, setLocalSelectedItems] = useState([]); // 선택된 항목 상태
   const [openCategories, setOpenCategories] = useState({}); // 카테고리 열림 상태
+
+  // selectedItems가 빈 배열로 전달되었을 때, 로컬 상태 초기화
+  useEffect(() => {
+    if (selectedItems.length === 0) {
+      setLocalSelectedItems([]); // 빈 배열이면 로컬 선택 항목을 초기화
+    } else {
+      setLocalSelectedItems(selectedItems); // 부모 컴포넌트에서 전달된 selectedItems 설정
+    }
+  }, [selectedItems]); // selectedItems가 변경될 때마다 실행
 
   // 서브 항목 클릭 처리 함수
   const handleSubItemClick = (subItem) => {
-    setSelectedItems((prevSelectedItems) => {
+    setLocalSelectedItems((prevSelectedItems) => {
       if (!prevSelectedItems.includes(subItem)) {
         return [...prevSelectedItems, subItem]; // 항목 추가
       }
@@ -28,10 +37,10 @@ function ArchiveLeft({ data, onSubItemClick }) {
   const getCategoryItems = (data) => {
     const categoryItems = {
       character: [],
-      animal: [],
+      place: [],
       object: [],
       emotion: [],
-      behavior: [],
+      action:[],
       text: [],
       emoji: []
     };
@@ -73,7 +82,7 @@ function ArchiveLeft({ data, onSubItemClick }) {
                   {categoryItems[categoryKey].map((subItem, subItemIndex) => (
                     <div
                       key={subItemIndex}
-                      className={`subitem ${selectedItems.includes(subItem) ? 'selected' : ''}`}
+                      className={`subitem ${localSelectedItems.includes(subItem) ? 'selected' : ''}`}
                       onClick={() => handleSubItemClick(subItem)}
                     >
                       {subItem}
