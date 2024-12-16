@@ -264,16 +264,17 @@
       "emoji": []
     },
     "description": "123"
-  },    {
+  },   
+  {
     "image": "20.png",
-    "title": "123",
+    "title": "뭐가 잘못됐죠?",
     "category": {
-      "character": [],
+      "character": ["박명수"],
       "place": [],
       "object": [],
-      "emotion": [],
+      "emotion": ["뻔뻔스러운", "뻔뻔함", "당당한"],
       "action": [],
-      "text":[],
+      "text":["진짜 모름"],
       "emoji": []
     },
     "description": "123"
@@ -756,7 +757,7 @@
   },
   {
     "image": "55.png",
-    "title": "뭐가 잘못됐죠?",
+    "title": "집에 가고 싶다.",
     "category": {
       "character": ["박명수"],
       "place": [],

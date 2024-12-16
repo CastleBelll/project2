@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column; /* 세로로 배치 */
     align-items: center;  /* 가운데 정렬 */
-    overflow: auto;  /* 내용이 넘칠 경우 스크롤 가능하도록 설정 */
+    overflow: hidden;  /* 내용이 넘칠 경우 스크롤 가능하도록 설정 */
   }
   
   .top-container {
@@ -47,10 +47,11 @@
     display: flex;
     flex-direction: column;  /* 세로로 배치 */
     align-items: center;  /* 가운데 정렬 */
-    width: 100%;
+    min-width: 100%;
     height: 100%;
     max-width: 1000px;  /* 최대 너비 제한 */
     justify-content: center;
+    overflow: auto;
     margin: 20px auto;  /* 위와 아래에 20px 여백, 좌우는 자동 정렬 */
     padding: 20px 0;  /* 위와 아래에 20px 여백, 좌우는 0 */
     box-sizing: border-box;  /* padding이 포함된 크기 계산 */

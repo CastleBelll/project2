@@ -10,85 +10,97 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
   const raycasterRef = useRef(new THREE.Raycaster()); // 레이캐스터
   const mouseRef = useRef(new THREE.Vector2()); // 마우스 좌표
 
-  const offsetRef = useRef({ x: 300, y: 80 }); // 마우스 좌표 오프셋
+  const offsetRef = useRef({ x: 400, y: 100 }); // 마우스 좌표 오프셋
   const zoomRef = useRef(1); // 배율
 
   useEffect(() => {
     // 이미지 랜덤 위치와 크기 설정
     const numImages = 160;
     const newImages = [];
+    const aspectRatio = window.innerWidth / window.innerHeight; // 화면 비율 계산
+    const widthRange = aspectRatio * 10; // 화면의 가로 범위를 3배로 확장
+    const heightRange = 10; // 화면의 세로 범위를 3배로 확장
+  
     for (let i = 0; i < numImages; i++) {
-      const randomX = Math.random() * 10 - 10;
-      const randomY = Math.random() * 10 - 10;
-      const randomSize = Math.random() * 1 + 0.5;
+      const randomX = Math.random() * widthRange - widthRange / 2; // 가로 범위 조정
+      const randomY = Math.random() * heightRange - heightRange / 2; // 세로 범위 조정
+      const randomSize = Math.random() * 1.2 + 1; // 크기: 최소 0.5배 ~ 최대 1.5배
   
       newImages.push({
         id: i,
-        position: [randomX - offsetRef.current.x / 100, randomY - offsetRef.current.y / 100, 0],
-        size: randomSize,
+        position: [randomX, randomY, 0],
+        size: randomSize, // 크기 설정
         texture: `/images/${i + 1}.png`,
       });
     }
   
-    // 20~30개 이미지 랜덤 선택
-    const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 20);
-    setImages(selectedImages);
+ // 30~40개 이미지 랜덤 선택
+const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 50);
+setImages(selectedImages);
+
   }, []);
+  
 
   useEffect(() => {
-  // 씬, 카메라, 렌더러 설정
-  const scene = new THREE.Scene();
-  const aspect = window.innerWidth / window.innerHeight;
-
-  const camera = new THREE.OrthographicCamera(
-    -aspect * 5,
-    aspect * 5,
-    5,
-    -5,
-    0.1,
-    1000
-  );
-  cameraRef.current = camera;
-  const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setClearColor(0x000000, 0);
-
-  camera.position.z = 5;
-
-  const textureLoader = new THREE.TextureLoader();
-  const planes = [];
-  images.forEach(({ id, position, size, texture }) => {
-    const imageTexture = textureLoader.load(texture, (loadedTexture) => {
-      const image = loadedTexture.image;
-      const aspectRatio = image.width / image.height;
-
-      const geometry = new THREE.PlaneGeometry(aspectRatio, 1); // 비율 유지
-      const material = new THREE.MeshBasicMaterial({
-        map: loadedTexture,
-        transparent: true,
-        opacity: 1,
+    // 씬, 카메라, 렌더러 설정
+    const scene = new THREE.Scene();
+    const aspect = window.innerWidth / window.innerHeight;
+  
+    const camera = new THREE.OrthographicCamera(
+      -aspect * 5, // 기존의 3배 확장
+      aspect * 5,
+      5,
+      -5,
+      0.1,
+      1000
+    );
+    cameraRef.current = camera;
+  
+    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x000000, 0);
+  
+    camera.position.z = 3;
+  
+    const textureLoader = new THREE.TextureLoader();
+    const planes = [];
+    images.forEach(({ id, position, size, texture }, index) => {
+      const imageTexture = textureLoader.load(texture, (loadedTexture) => {
+        const image = loadedTexture.image;
+        const aspectRatio = image.width / image.height;
+  
+        const geometry = new THREE.PlaneGeometry(aspectRatio, 1); // 이미지 비율 유지
+        const material = new THREE.MeshBasicMaterial({
+          map: loadedTexture,
+          transparent: true,
+          opacity: 1,
+        });
+  
+        const plane = new THREE.Mesh(geometry, material);
+        plane.position.set(...position);
+  
+        // 크기 조정
+        plane.scale.set(size, size, 1); // 최대 크기 1.5배 반영
+  
+        // 렌더 순서 지정
+        plane.renderOrder = index;
+  
+        // 사용자 데이터 추가
+        plane.userData = { id };
+  
+        // 씬에 추가 및 참조 배열에 추가
+        planes.push(plane);
+        scene.add(plane);
       });
-
-      const plane = new THREE.Mesh(geometry, material);
-      plane.position.set(...position);
-
-      // 고정 크기 또는 배율 적용
-      const fixedScale = 2; // 원하는 크기에 맞게 조정
-      plane.scale.set(fixedScale, fixedScale, 1);
-
-      plane.userData = { id };
-      planes.push(plane);
-      scene.add(plane);
     });
-  });
-  planesRef.current = planes;
-
-  const animate = () => {
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
-  };
-
-  animate();
+    planesRef.current = planes;
+  
+    const animate = () => {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    };
+  
+    animate();
 
     // 마우스 이벤트 처리
     const handleMouseMove = (event) => {
@@ -98,18 +110,17 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
     };
 
     const handleRaycast = () => {
-      // Raycaster에 카메라와 마우스 좌표를 설정
       raycasterRef.current.setFromCamera(mouseRef.current, cameraRef.current);
       const intersects = raycasterRef.current.intersectObjects(planesRef.current);
-
-      // 모든 이미지의 색상을 원래대로 설정
+    
       planesRef.current.forEach((plane) => {
-        plane.material.color.set(0xffffff); // 기본 흰색
+        plane.material.color.set(0xffffff); // 기본 색상
       });
-
+    
       if (intersects.length > 0) {
-        const intersectedPlane = intersects[0].object;
-        intersectedPlane.material.color.set(0x32CD32); // hover된 이미지 초록색으로 변경
+        intersects.sort((a, b) => b.object.renderOrder - a.object.renderOrder); // 정렬
+        const intersectedPlane = intersects[0].object; // 가장 위의 plane
+        intersectedPlane.material.color.set(0x32cd32); // hover 색상
       }
     };
 

@@ -305,19 +305,26 @@ const Generator = () => {
     };
   }, [data, canvasSize]);
 /* eslint-disable react-hooks/exhaustive-deps */
-  const getRectangleSize = (text) => {
-    const fontSize = 18;
-    const paddingX = 12;
-    const paddingY = 5;
+const getRectangleSize = (text) => {
+  const fontSize = 18;
+  const paddingX = 12;
+  const paddingY = 5;
 
-    const textWidth = fontSize * text.length * 1;
-    const textHeight = fontSize;
+  // 텍스트의 실제 너비를 계산하기 위한 캔버스 생성
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
+  context.font = `${fontSize}px Arial`; // 원하는 폰트를 설정
 
-    return {
-      width: textWidth + paddingX * 2,
-      height: textHeight + paddingY * 2,
-    };
+  // 텍스트의 실제 너비 계산
+  const textWidth = context.measureText(text).width;
+  const textHeight = fontSize; // 텍스트 높이는 폰트 크기에 비례
+
+  return {
+    width: textWidth + paddingX * 2,
+    height: textHeight + paddingY * 2,
   };
+};
+
   useEffect(() => {
     if (clickedTexts.length > 0) {
       const newClickedData = getClickedData();
@@ -330,7 +337,7 @@ const Generator = () => {
     if (clickedTexts.length === 0) return [];
     
     const clickedData = data.filter((item) => {
-      return clickedTexts.every((text) => {
+      return clickedTexts.some((text) => {
         return Object.values(item.category).flat().includes(text);
       });
     });

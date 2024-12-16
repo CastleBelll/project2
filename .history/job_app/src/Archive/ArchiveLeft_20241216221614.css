@@ -1,0 +1,122 @@
+/* 전체 컨테이너 */
+.sidebar-container {
+  height: 100%;
+  width: 5%;
+  min-width: 400px;
+  background-color: #ffffff;
+  border-right: solid 1px black;
+  position: relative;
+}
+
+.sidebar-top {
+  width: 360px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 101px;
+  border-bottom: solid 1px black;
+}
+
+.sidebar-bottom {
+  width: 100%;
+  height: calc(100% - 100px);
+  overflow:auto;
+  position: relative;
+  padding: 14px 20px;
+  /* 기본 스크롤바 스타일 */
+  scrollbar-width: thin; /* Firefox에서 스크롤바 너비 설정 */
+  scrollbar-color: #888 #e0e0e0; /* Firefox에서 thumb와 track 색상 설정 */
+}
+
+/* Webkit 기반 브라우저 (Chrome, Safari 등)용 */
+.sidebar-bottom::-webkit-scrollbar {
+  width: 8px; /* 스크롤바 너비 */
+}
+
+.sidebar-bottom::-webkit-scrollbar-thumb {
+  background-color: #888; /* thumb(슬라이더) 색상 */
+  border-radius: 10px; /* 둥근 모서리 */
+  border: 1px solid #e0e0e0; /* thumb 테두리 */
+}
+
+.sidebar-bottom::-webkit-scrollbar-track {
+  background-color: #e0e0e0; /* track 배경 색상 */
+  border-radius: 10px; /* track의 둥근 모서리 */
+}
+
+.sidebar-bottom::-webkit-scrollbar-button {
+  display: none; /* 상단, 하단 화살표 버튼 숨기기 */
+}
+
+.sidebar-bottom::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+}
+
+/* 섹션 제목 */
+.section-title {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 13px;
+  transition: color 0.3s ease;
+}
+
+/* 하위 리스트 */
+.sublist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 15px;
+  max-height: 0; /* 초기 높이 설정 */
+  opacity: 0; /* 초기 상태에서 투명 */
+  box-sizing: border-box; /* border 포함하여 크기 변경 방지 */
+  transition: max-height 1.2s cubic-bezier(0.5, 0.1, 0.25, 1), opacity 1.3s ease-out; /* 높이와 불투명도 애니메이션 */
+}
+/* 하위 리스트가 열릴 때 */
+.sublist.open {
+  opacity: 1; /* 불투명도 */
+  max-height: 100%;
+  transition: max-height 0.6s cubic-bezier(0.5, 0.1, 0.25, 1), opacity 0.6s ease-out; /* 애니메이션 타이밍을 일치시킴 */
+}
+
+/* 하위 리스트가 닫힐 때 */
+.sublist:not(.open) {
+  max-height: 0; /* 닫힐 때 높이 0 */
+  opacity: 0; /* 사라지는 상태 */
+  transition: max-height 0.6s cubic-bezier(0.5, 0.1, 0.25, 1) 0.3s, opacity 0.6s ease-out 0.3s;
+}
+
+/* 개별 항목 */
+.subitem {
+  cursor: pointer;
+  padding: 1px 2px;
+  margin: 1px;
+  border-radius: 50px;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.1s ease;
+  display: inline-block;
+  min-width: 40px;
+  font-size: 16px;
+  box-sizing: border-box; /* border 포함하여 크기 변경 방지 */
+}
+
+.subitem.selected {
+  background-color: #2DFF2D;
+  font-weight: bold;
+  transition : ease-out 0.3s;
+}
+
+.subitem:hover {
+  box-sizing: border-box; /* border 포함하여 크기 변경 방지 */
+  border-radius: 50px;
+  outline: 1px solid #2DFF2D;
+}
+
+/* 반응형 디자인 */
+.subitem {
+  display: inline-block;
+  box-sizing: border-box;
+}
