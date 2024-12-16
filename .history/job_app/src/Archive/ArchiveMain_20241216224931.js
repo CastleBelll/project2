@@ -35,7 +35,7 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
     }
   
  // 30~40개 이미지 랜덤 선택
-const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 30);
+const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 3);
 setImages(selectedImages);
 
   }, []);

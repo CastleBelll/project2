@@ -32,7 +32,6 @@
     align-items: center; /* 수직 가운데 정렬 */
     flex: 1; /* 남은 공간을 차지 */
     min-height: 61px;
-    font-weight: bold;
     gap: 20px;
     font-size: 20px;
     margin : 0 20px;

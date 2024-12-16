@@ -32,7 +32,6 @@
     align-items: center; /* 수직 가운데 정렬 */
     flex: 1; /* 남은 공간을 차지 */
     min-height: 61px;
-    font-weight: bold;
     gap: 20px;
     font-size: 20px;
     margin : 0 20px;
@@ -60,9 +59,8 @@
   
   .image-container-info {
     width: 100%;
-    max-width: 600px;  /* 이미지 최대 너비 */
+    max-height: 400px;  /* 이미지 최대 너비 제한 */
     margin-bottom: 20px;
-    object-fit: contain; /* 비율을 유지하면서 크기를 제한 */
   }
   
   .content-container-info {
@@ -79,7 +77,6 @@
   .title-container-info {
     margin-bottom: 10px;
     font-size: 36px;
-    font-weight: bold;
     word-wrap: break-word;  /* 제목이 길 경우 줄바꿈 처리 */
     text-align: center;  /* 텍스트 가운데 정렬 */
   }
@@ -109,12 +106,3 @@
     word-wrap: break-word;  /* 텍스트가 넘칠 경우 줄바꿈 처리 */
   }
   
-  body {
-    font-family: 'CustomEnglishFont', sans-serif !important;;
-    overflow: hidden;
-  }
-  
-  /* 한글 전용 스타일 */
-  body:lang(ko) {
-    font-family: 'CustomKoreanFont', sans-serif !important;;
-  }

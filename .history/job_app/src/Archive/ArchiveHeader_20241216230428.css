@@ -20,7 +20,7 @@
   
   /* 기존의 selected-item 스타일 유지 */
   .selected-item {
-    padding: 1px 8px;
+    padding: 1px 6px;
     background-color: #2DFF2D; /* 선택된 아이템의 배경색 */
     border-radius: 50px;
     font-weight: bold; /* 글자 굵게 설정 */

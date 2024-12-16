@@ -40,13 +40,3 @@
   padding: 1rem;
   box-sizing: border-box;
 }
-
-body {
-  font-family: 'CustomEnglishFont', sans-serif !important;;
-  overflow: hidden;
-}
-
-/* 한글 전용 스타일 */
-body:lang(ko) {
-  font-family: 'CustomKoreanFont', sans-serif !important;;
-}

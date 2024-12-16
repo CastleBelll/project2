@@ -130,12 +130,11 @@ body.archive-active .nav-links .active {
 }
 
 /* Generator 활성화 시 Archive 링크 hover 시 초록색으로 변경 */
-body.archive-active .navbar .nav-links a:hover {
-  text-decoration-color: #9746ff !important; /* 밑줄도 초록색으로 설정 */
-}
-
-/* Generator 활성화 시 Archive 링크 hover 시 초록색으로 변경 */
 body.generator-active .navbar .nav-links a:hover {
   text-decoration-color: #00FF00 !important; /* 밑줄도 초록색으로 설정 */
 }
 
+/* Generator 활성화 시 Archive 링크 hover 시 초록색으로 변경 */
+body.archive-active .navbar .nav-links a:hover {
+  text-decoration-color: #9746ff !important; /* 밑줄도 초록색으로 설정 */
+}

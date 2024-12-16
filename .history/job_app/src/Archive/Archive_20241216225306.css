@@ -33,7 +33,7 @@
 }
 
 /* Main area styling */
-.main-area {
+.main-area-container {
   flex: 1; /* Takes up the remaining vertical space */
   background-color: #fff; /* White background for main content */
   overflow: auto; /* Scrollable if content exceeds container height */
@@ -41,12 +41,4 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'CustomEnglishFont', sans-serif !important;;
-  overflow: hidden;
-}
 
-/* 한글 전용 스타일 */
-body:lang(ko) {
-  font-family: 'CustomKoreanFont', sans-serif !important;;
-}

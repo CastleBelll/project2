@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'CustomEnglishFont';
-  src: url('../fonts/GT-Flexa-Mono-Bold-Trial.otf') format('opentype');
+  src: url('../fonts/GT-Flexa-Mono-Bold-Trial') format('opentype');
   font-weight: bold; /* bold 버전 */
   font-style: normal;
 }

@@ -32,7 +32,6 @@
     align-items: center; /* 수직 가운데 정렬 */
     flex: 1; /* 남은 공간을 차지 */
     min-height: 61px;
-    font-weight: bold;
     gap: 20px;
     font-size: 20px;
     margin : 0 20px;
@@ -79,7 +78,7 @@
   .title-container-info {
     margin-bottom: 10px;
     font-size: 36px;
-    font-weight: bold;
+    font-weight: bole;
     word-wrap: break-word;  /* 제목이 길 경우 줄바꿈 처리 */
     text-align: center;  /* 텍스트 가운데 정렬 */
   }

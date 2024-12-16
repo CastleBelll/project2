@@ -90,7 +90,7 @@
 /* 개별 항목 */
 .subitem {
   cursor: pointer;
-  padding: 1px 8px;
+  padding: 1px 4px;
   margin: 1px;
   border-radius: 50px;
   text-align: center;
