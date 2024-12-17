@@ -18,13 +18,13 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
     const numImages = 160;
     const newImages = [];
     const aspectRatio = window.innerWidth / window.innerHeight; // 화면 비율 계산
-    const widthRange = aspectRatio * 20; // 화면의 가로 범위를 확장
-    const heightRange = 20; // 화면의 세로 범위를 확장
+    const widthRange = aspectRatio * 8; // 화면의 가로 범위를 2배 확장
+    const heightRange = 8; // 화면의 세로 범위를 2배 확장
   
     for (let i = 0; i < numImages; i++) {
       const randomX = Math.random() * widthRange - widthRange / 2; // 가로 범위 조정
       const randomY = Math.random() * heightRange - heightRange / 2; // 세로 범위 조정
-      const randomSize = Math.random() * 1.2 + 1; // 크기: 최소 1배 ~ 최대 2배
+      const randomSize = Math.random() * (1.5 - 0.75) + 1.25; // 크기: 최소 0.75배 ~ 최대 1.25배
   
       newImages.push({
         id: i,
@@ -37,6 +37,7 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
     // 30~40개 이미지 랜덤 선택
     const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 20);
     setImages(selectedImages);
+  
   }, []);
   
 
@@ -71,15 +72,15 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
         const geometry = new THREE.PlaneGeometry(aspectRatio, 1); // 이미지 비율 유지
         const material = new THREE.MeshBasicMaterial({
           map: loadedTexture,
-          transparent: true, // 기본적으로 투명 처리
-          opacity: 1, // 완전 불투명
+          transparent: false,
+          opacity: 1,
         });
   
         const plane = new THREE.Mesh(geometry, material);
         plane.position.set(...position);
   
         // 크기 조정
-        plane.scale.set(size, size, 1); // 최대 크기 2배 반영
+        plane.scale.set(size, size, 1); // 최대 크기 1.5배 반영
   
         // 렌더 순서 지정
         plane.renderOrder = index;
@@ -168,12 +169,18 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
     const handleWheel = (event) => {
       const canvas = canvasRef.current; // canvasRef를 통해 캔버스 참조 가져오기
       if (!canvas.contains(event.target)) return; // canvas에 마우스가 있을 때만 작동
+    
+      const sensitivity = 1.05; // 민감도 (더 큰 값일수록 더 민감하게)
+      
       if (event.deltaY < 0) {
-        zoomRef.current *= 1.1;
+        zoomRef.current *= sensitivity;
       } else {
-        zoomRef.current *= 0.9;
+        zoomRef.current *= 1 / sensitivity; // 민감도를 반영하여 축소
       }
-  
+    
+      // 최소 0.75배, 최대 1.5배로 배율 제한
+      zoomRef.current = Math.min(Math.max(zoomRef.current, 0.75), 1.5);
+    
       const aspect = window.innerWidth / window.innerHeight;
       cameraRef.current.left = -aspect * 5 * zoomRef.current;
       cameraRef.current.right = aspect * 5 * zoomRef.current;
