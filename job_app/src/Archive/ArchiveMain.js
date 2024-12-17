@@ -13,31 +13,37 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
   const offsetRef = useRef({ x: 400, y: 100 }); // 마우스 좌표 오프셋
   const zoomRef = useRef(1); // 배율
 
-  useEffect(() => {
-    // 이미지 랜덤 위치와 크기 설정
+  // 랜덤 이미지 생성 함수
+  const generateRandomImages = () => {
     const numImages = 160;
     const newImages = [];
     const aspectRatio = window.innerWidth / window.innerHeight; // 화면 비율 계산
     const widthRange = aspectRatio * 8; // 화면의 가로 범위를 2배 확장
     const heightRange = 8; // 화면의 세로 범위를 2배 확장
-  
+
     for (let i = 0; i < numImages; i++) {
       const randomX = Math.random() * widthRange - widthRange / 2; // 가로 범위 조정
       const randomY = Math.random() * heightRange - heightRange / 2; // 세로 범위 조정
-      const randomSize = Math.random() * (1.5 - 0.75) + 1.25; // 크기: 최소 0.75배 ~ 최대 1.25배
-  
+      const randomSize = Math.random() * (1.5 - 1) + 1; // 크기: 최소 1배 ~ 최대 1.5배
+
       newImages.push({
         id: i,
         position: [randomX, randomY, 0],
-        size: randomSize, // 크기 설정
+        size: randomSize,
         texture: `/images/${i + 1}.png`,
       });
     }
-  
+
     // 30~40개 이미지 랜덤 선택
-    const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 20);
-    setImages(selectedImages);
-  
+    const selectedImages = newImages
+      .sort(() => 0.5 - Math.random())
+      .slice(0, Math.floor(Math.random() * 11) + 20);
+
+    setImages(selectedImages); // 상태 업데이트
+  };
+
+  useEffect(() => {
+    generateRandomImages(); // 초기 이미지 생성
   }, []);
   
 
@@ -72,7 +78,7 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
         const geometry = new THREE.PlaneGeometry(aspectRatio, 1); // 이미지 비율 유지
         const material = new THREE.MeshBasicMaterial({
           map: loadedTexture,
-          transparent: false,
+          transparent: true,
           opacity: 1,
         });
   
@@ -239,7 +245,7 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
 
       <canvas ref={canvasRef} />
     </div>
-    <div className="refresh-button">
+    <div className="refresh-button" onClick={generateRandomImages}>
           <img  src="/Vector.png" alt="Vector" />
         </div>
         </>

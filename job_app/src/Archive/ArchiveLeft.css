@@ -58,6 +58,7 @@
 .section-title {
   cursor: pointer;
   font-weight: bold;
+  font-family: 'CustomEnglishFont', sans-serif !important;
   margin-bottom: 13px;
   transition: color 0.3s ease;
 }

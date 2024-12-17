@@ -10,7 +10,6 @@ import './styles/fonts.css';
 
 function Navigation() {
   const location = useLocation(); // 현재 경로를 가져오기
-
   return (
     <Navbar expand="lg">
       <Navbar.Collapse id="navbarNav">

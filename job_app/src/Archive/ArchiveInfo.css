@@ -109,7 +109,7 @@
     word-wrap: break-word;  /* 텍스트가 넘칠 경우 줄바꿈 처리 */
   }
   
-  body {
+  body:lang(en) {
     font-family: 'CustomEnglishFont', sans-serif !important;;
     overflow: hidden;
   }

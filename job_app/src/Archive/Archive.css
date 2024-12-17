@@ -2,6 +2,7 @@
 .archive-container {
   display: flex;
   height: 100vh;
+  overflow:hidden;
 }
 
 /* Left sidebar styling */
@@ -36,12 +37,12 @@
 .main-area {
   flex: 1; /* Takes up the remaining vertical space */
   background-color: #fff; /* White background for main content */
-  overflow: auto; /* Scrollable if content exceeds container height */
+  overflow: hidden; /* Scrollable if content exceeds container height */
   padding: 1rem;
   box-sizing: border-box;
 }
 
-body {
+body:lang(en) {
   font-family: 'CustomEnglishFont', sans-serif !important;;
   overflow: hidden;
 }
