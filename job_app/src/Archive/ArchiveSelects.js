@@ -38,7 +38,7 @@ const ArchiveSelects = ({ selectedItemsList }) => {
         <p>No images found for selected items.</p>
       ) : (
         <Swiper
-          spaceBetween={-1000}  // 슬라이드 간의 간격
+          spaceBetween={-500}  // 슬라이드 간의 간격
           slidesPerView={3}  // 화면에 보여질 슬라이드 개수
           loop={true}  // 반복 재생
           centeredSlides={true}  // 가운데 정렬
@@ -57,7 +57,7 @@ const ArchiveSelects = ({ selectedItemsList }) => {
         >
           {images.map((item, index) => (
             <SwiperSlide key={index} className="swiper-slide">
-              <img src={`/images/${item.image}`} alt={item.title} className="carousel-image" />
+              <img src={`/images/${item.image}`} alt={item.title} className="carousel-image"/>
             </SwiperSlide>
           ))}
         </Swiper>

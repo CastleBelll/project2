@@ -18,13 +18,13 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
     const numImages = 160;
     const newImages = [];
     const aspectRatio = window.innerWidth / window.innerHeight; // 화면 비율 계산
-    const widthRange = aspectRatio * 10; // 화면의 가로 범위를 3배로 확장
-    const heightRange = 10; // 화면의 세로 범위를 3배로 확장
+    const widthRange = aspectRatio * 20; // 화면의 가로 범위를 확장
+    const heightRange = 20; // 화면의 세로 범위를 확장
   
     for (let i = 0; i < numImages; i++) {
       const randomX = Math.random() * widthRange - widthRange / 2; // 가로 범위 조정
       const randomY = Math.random() * heightRange - heightRange / 2; // 세로 범위 조정
-      const randomSize = Math.random() * 1.2 + 1; // 크기: 최소 0.5배 ~ 최대 1.5배
+      const randomSize = Math.random() * 1.2 + 1; // 크기: 최소 1배 ~ 최대 2배
   
       newImages.push({
         id: i,
@@ -34,10 +34,9 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
       });
     }
   
- // 30~40개 이미지 랜덤 선택
-const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 30);
-setImages(selectedImages);
-
+    // 30~40개 이미지 랜덤 선택
+    const selectedImages = newImages.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 11) + 20);
+    setImages(selectedImages);
   }, []);
   
 
@@ -72,15 +71,15 @@ setImages(selectedImages);
         const geometry = new THREE.PlaneGeometry(aspectRatio, 1); // 이미지 비율 유지
         const material = new THREE.MeshBasicMaterial({
           map: loadedTexture,
-          transparent: true,
-          opacity: 1,
+          transparent: true, // 기본적으로 투명 처리
+          opacity: 1, // 완전 불투명
         });
   
         const plane = new THREE.Mesh(geometry, material);
         plane.position.set(...position);
   
         // 크기 조정
-        plane.scale.set(size, size, 1); // 최대 크기 1.5배 반영
+        plane.scale.set(size, size, 1); // 최대 크기 2배 반영
   
         // 렌더 순서 지정
         plane.renderOrder = index;
@@ -115,6 +114,8 @@ setImages(selectedImages);
     
       planesRef.current.forEach((plane) => {
         plane.material.color.set(0xffffff); // 기본 색상
+        plane.material.transparent = false;  // 투명 효과 제거
+        plane.material.opacity = 1;  // 완전히 불투명
       });
     
       if (intersects.length > 0) {
