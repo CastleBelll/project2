@@ -25,7 +25,7 @@ const ArchiveSelects = ({ selectedItemsList }) => {
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching the JSON file:', error);
+        console.error('Error fetching the JSON file:', error);npm
         setLoading(false);
       });
   }, [selectedItemsList]);
