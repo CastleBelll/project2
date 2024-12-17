@@ -64,11 +64,19 @@ body.archive-active .navbar {
   transition: color 0.3s ease, border-bottom 0.3s ease; /* 부드러운 색상 전환 및 밑줄 전환 */
 }
 
-.nav-links a:hover,
 .nav-links .active {
   color: #ffffff !important; /* 선택 및 활성화 상태에서도 글씨 색상을 흰색으로 고정 */
   text-decoration: underline; /* 밑줄 추가 */
   text-decoration-color: #9746ff; /* 밑줄 색상 보라색으로 설정 */
+  text-underline-offset: 5px; /* 밑줄과 글자 사이 간격 조정 */
+  text-decoration-thickness: 2px; /* 밑줄 두께를 2px로 설정 */
+  z-index: 4000; /* z-index로 navbar 아래로 위치하도록 설정 */
+}
+
+.nav-links a:hover {
+  color: #ffffff !important; /* 선택 및 활성화 상태에서도 글씨 색상을 흰색으로 고정 */
+  text-decoration: underline; /* 밑줄 추가 */
+  text-decoration-color: #2dff2d; /* 밑줄 색상 보라색으로 설정 */
   text-underline-offset: 5px; /* 밑줄과 글자 사이 간격 조정 */
   text-decoration-thickness: 2px; /* 밑줄 두께를 2px로 설정 */
   z-index: 4000; /* z-index로 navbar 아래로 위치하도록 설정 */

@@ -1,14 +1,14 @@
 [
   {
     "image": "1.png",
-    "title": "1_0점!!",
+    "title": "0점!!",
     "category": {
       "character": ["박명수"],
-      "place": ["한옥"],
+      "episode": ["짝꿍"],
       "object": ["보드판", "점수판"],
       "emotion": ["단호한", "엄격한", "진지한", "근엄한", "엄근진"],
       "action": [],
-      "text":["짝", "0점"],
+      "text": ["짝", "0점"],
       "emoji": ["😤"]
     },
     "description": "123"
@@ -18,11 +18,11 @@
     "title": "6점은 아닌 것 같고! 4점도 아닌 것 같고...",
     "category": {
       "character": ["정형돈"],
-      "place": ["한옥"],
+      "episode": ["짝꿍"],
       "object": ["보드판", "점수판"],
-      "emotion": ["머뭇거림"],
-      "action": ["갈팡질팡 하는"],
-      "text":["짝", "점수"],
+      "emotion": ["머뭇거리는"],
+      "action": ["갈팡질팡하는"],
+      "text": ["짝", "점수"],
       "emoji": ["😅"]
       },
       "description": "123"
@@ -32,11 +32,11 @@
     "title": "7점은 너무 많은 것 같고, 5점은 좀 적은 것 같아서요...",
     "category": {
       "character": ["정준하"],
-      "place": ["한옥"],
+      "episode": ["짝꿍"],
       "object": ["보드판", "점수판"],
-      "emotion": ["머뭇거림"],
-      "action": ["갈팡질팡 하는"],
-      "text":["짝", "점수"],
+      "emotion": ["머뭇거리는"],
+      "action": ["갈팡질팡하는"],
+      "text": ["짝", "점수"],
       "emoji": ["😅"]
       },
       "description": "123"
@@ -46,11 +46,11 @@
     "title": "10점... 10점이요!",
     "category": {
       "character": ["박명수"],
-      "place": ["한옥"],
+      "episode": ["짝꿍"],
       "object": ["보드판", "점수판"],
       "emotion": ["단호한", "엄격한", "진지한", "근엄한", "엄근진"],
       "action": [],
-      "text":["짝", "점수"],
+      "text": ["짝", "점수"],
       "emoji": ["😤"]
       },
       "description": "123"
@@ -59,12 +59,12 @@
     "image": "5.png",
     "title": "12세 치곤 심하게 당한 길이",
     "category": {
-      "character": ["길"],
-      "place": ["땅바닥", "땅"],
+      "character": ["명수는 12살"],
+      "episode": ["땅바닥", "땅"],
       "object": ["내복"],
-      "emotion": ["어이없음", "허탈감", "모멸감", "뻘하게 웃긴"],
-      "action": [],
-      "text":["심하게 당한", "12세"],
+      "emotion": ["어이없음", "허탈한", "모멸적인", "뻘하게 웃긴"],
+      "action": ["넘어진"],
+      "text": ["심하게 당한", "12세"],
       "emoji": ["🥲", "😢"]
       },
       "description": "123"
@@ -74,11 +74,11 @@
     "title": "가격은 깎아야 제맛이지",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["쩐의 전쟁 2"],
       "object": [],
-      "emotion": ["단호한", "화남"],
+      "emotion": ["단호한", "화난"],
       "action": ["버럭하는", "큰소리 내는"],
-      "text":["가격", "깎아야"],
+      "text": ["가격", "깎아야"],
       "emoji": ["😤", "😠", "😡"]
     },
     "description": "123"
@@ -88,12 +88,12 @@
     "title": "가관(?)이네 가관(?)",
     "category": {
       "character": ["길"],
-      "place": ["곤돌라"],
+      "episode": ["텔레파시 특집"],
       "object": [],
-      "emotion": ["감상"],
+      "emotion": ["들뜬", "활기찬", "끝내주는", "흥분된", "기쁨에 넘치는"],
       "action": ["손을 번쩍", "호들갑 떠는"],
-      "text":["가관이네", "가관", "경치", "단어 선택"],
-      "emoji": []
+      "text": ["가관이네", "가관", "경치", "단어 선택"],
+      "emoji": ["😆", "😄"]
     },
     "description": "123"
   },   
@@ -102,11 +102,11 @@
     "title": "가라는 건지... 말라는 건지...",
     "category": {
       "character": ["노홍철"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["황당"],
-      "action": ["갈팡질팡 하는"],
-      "text":["이랬다 저랬다", "어쩌라는 거지"],
+      "emotion": ["황당", "지겨운", "질린"],
+      "action": ["갈팡질팡하는", "멍한"],
+      "text": ["이랬다 저랬다", "어쩌라는 거지"],
       "emoji": ["🤨"]
     },
     "description": "123"
@@ -116,11 +116,11 @@
     "title": "가만히 있지 않습니까?",
     "category": {
       "character": ["유재석"],
-      "place": ["법정"],
+      "episode": ["법정 공방"],
       "object": [],
-      "emotion": ["얕보는", "기분 상한"],
-      "action": ["깐족거리는", "눈이 커짐"],
-      "text":["가만히", "어쩌라고요"],
+      "emotion": ["얕보는", "기분 상한", "밥 맛 떨어지는", "귀찮은"],
+      "action": ["조롱하는", "반박하는", "깐족거리는", "눈이 커진"],
+      "text": ["가만히", "어쩌라는 거지"],
       "emoji": ["🤓"]
     },
     "description": "123"
@@ -130,11 +130,11 @@
     "title": "가망이 없어요!",
     "category": {
       "character": ["박명수"],
-      "place": ["한옥"],
+      "episode": ["짝꿍"],
       "object": [],
       "emotion": ["냉혹한", "단호한", "엄격한", "진지한", "근엄한", "엄근진"],
-      "action": [],
-      "text":["가망이 없음"],
+      "action": ["호통치는", "눈을 부릅뜨는", "근심하는"],
+      "text": ["가망이 없음"],
       "emoji": ["😤"]
     },
     "description": "123"
@@ -144,11 +144,11 @@
     "title": "간섭은 안 해 줬으면 좋겠어",
     "category": {
       "character": ["박명수"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["부탁"],
-      "action": ["두 손을 잡는"],
-      "text":["간섭하지마", "거절"],
+      "emotion": ["훈훈한", "정겨운", "정을 느끼는", "누그러지는"],
+      "action": ["두 손을 잡는", "부탁하는"],
+      "text": ["간섭하지마", "거절"],
       "emoji": []
     },
     "description": "123"
@@ -158,11 +158,11 @@
     "title": "감히!",
     "category": {
       "character": ["정형돈"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["불쾌한", "불만족스러운", "기분 상한", "분개한"],
-      "action": ["눈이 커진"],
-      "text":["감히"],
+      "action": ["눈이 커진", "반박하는", "화내는", "응시하는"],
+      "text": ["감히"],
       "emoji": ["🤨"]
     },
     "description": "123"
@@ -172,11 +172,11 @@
     "title": "같은 또래에 비해 제일 떨어지는구먼",
     "category": {
       "character": ["유재석"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": ["컴퓨터"],
-      "emotion": ["얕보는", "하찮은", "멸시하는", "한심한" , "모멸감", "비참한"],
-      "action": ["깔보며", "내려다 보며", "주머니에 손 넣고"],
-      "text":["같은 또래", "뒤떨어지는"],
+      "emotion": ["하찮은", "멸시하는", "모멸적인", "비참한"],
+      "action": ["깔보는", "내려다보는", "질책하는", "한심한 눈빛"],
+      "text": ["같은 또래", "뒤떨어지는"],
       "emoji": []
     },
     "description": "123"
@@ -186,11 +186,11 @@
     "title": "같은 편도 장담 못하는 그의 정체",
     "category": {
       "character": ["정준하"],
-      "place": [],
+      "episode": ["명수는 12살"],
       "object": [],
       "emotion": ["당황한", "기력이 넘치는", "두려운", "기대하는"],
-      "action": ["의기양양", "거만함"],
-      "text":["장담 못하는", "같은 팀인가?"],
+      "action": ["의기양양한", "거만한"],
+      "text": ["장담 못하는", "같은 팀인가?"],
       "emoji": ["😦"]
     },
     "description": "123"
@@ -200,11 +200,11 @@
     "title": "같이 자면 욕 안 먹어",
     "category": {
       "character": ["박명수"],
-      "place": ["버스"],
+      "episode": ["도둑들"],
       "object": [],
-      "emotion": ["웃긴", "어이없는", "당당함", "뻔뻔함"],
-      "action": [],
-      "text":[""],
+      "emotion": ["웃긴", "어이없는", "당당한", "뻔뻔한"],
+      "action": ["밑도 끝도 없는", "익살스러운 표정", "고집있는"],
+      "text": [],
       "emoji": ["😏"]
     },
     "description": "123"
@@ -214,11 +214,11 @@
     "title": "그냥 너는... 너무 멀리 온 거야",
     "category": {
       "character": ["노홍철"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": ["컴퓨터"],
-      "emotion": ["하찮은", "한심한", "무관심한"],
-      "action": ["도와주며"],
-      "text":[],
+      "emotion": ["하찮은", "한심한", "성가신", "얕보는"],
+      "action": ["도와주는", "멸시하는"],
+      "text": [],
       "emoji": ["🫤"]
     },
     "description": "123"
@@ -228,12 +228,12 @@
     "title": "그냥 일하자",
     "category": {
       "character": ["정준하"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": ["컴퓨터"],
-      "emotion": ["무기력한", "멍한", "암담한", "공허한", "맥 빠진"],
-      "action": ["타닥타닥"],
-      "text":[],
-      "emoji": ["😕"]
+      "emotion": ["암담한", "공허한", "맥 빠진", "허탈한"],
+      "action": ["멍한", "무기력한"],
+      "text": ["타닥타닥"],
+      "emoji": ["😕", "😐"]
     },
     "description": "123"
   },
@@ -242,12 +242,12 @@
     "title": "그냥 큰소리 한 번 치고 싶었습니다",
     "category": {
       "character": ["정준하"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["낙심한", "기력이 없는", "침울한", "울적한", "의기소침한"],
-      "action": [""],
-      "text":["그냥", "큰소리"],
-      "emoji": ["☹️"]
+      "emotion": ["낙심한", "침울한", "울적한", "의기소침한"],
+      "action": ["한탄하는", "풀이 죽은", "기력이 없는"],
+      "text": ["그냥", "큰소리"],
+      "emoji": ["☹️", "🥲"]
     },
     "description": "123"
   },
@@ -256,25 +256,25 @@
     "title": "꿈은 없고요 그냥 놀고 싶습니다",
     "category": {
       "character": ["박명수"],
-      "place": ["강연장"],
+      "episode": ["무도를 부탁해"],
       "object": [],
-      "emotion": ["당당한", "충만한", "의기양양한", "쉬고싶은", "놀고싶은"],
-      "action": ["프레젠테이션"],
-      "text":["꿈"],
+      "emotion": ["뻔뻔한", "어이없는", "당당한", "충만한", "의기양양한"],
+      "action": ["긁적이는", "무작정 우기는", "고집있는"],
+      "text": ["꿈", "프레젠테이션", "쉬고 싶은", "놀고 싶은"],
       "emoji": []
     },
     "description": "123"
-  },   
+  },    
   {
     "image": "20.png",
     "title": "뭐가 잘못됐죠?",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["뻔뻔스러운", "뻔뻔함", "당당한"],
-      "action": [],
-      "text":["진짜 모름"],
+      "emotion": ["뻔뻔한", "당당한"],
+      "action": ["거만한 표정", "무작정 우기는"],
+      "text": ["진짜 모름"],
       "emoji": []
     },
     "description": "123"
@@ -284,11 +284,11 @@
     "title": "나는 몰라",
     "category": {
       "character": ["하하"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["뻔뻔한", "즐기는", "얼척없는", "어이없는"],
-      "action": ["상상하는 중"],
-      "text":["초지일관"],
+      "action": ["상상하는", "거만한 표정", "밑도 끝도 없는"],
+      "text": ["초지일관"],
       "emoji": ["😗"]
     },
     "description": "123"
@@ -298,11 +298,11 @@
     "title": "나 만근추",
     "category": {
       "character": ["길"],
-      "place": ["동네"],
+      "episode": ["명수는 12살"],
       "object": [],
       "emotion": ["당당한", "기력이 넘치는", "충만한", "원기가 왕성한"],
-      "action": ["무거워지기"],
-      "text":["만근추"],
+      "action": ["자세를 취하는", "거만한 표정"],
+      "text": ["만근추"],
       "emoji": []
     },
     "description": "123"
@@ -312,11 +312,11 @@
     "title": "나는 일이 남았으니까 먼저 퇴근해요!",
     "category": {
       "character": ["유재석"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["기대하는", "뭐가 뭔지 알 수 없는", "뭔가 아닌 것 같은"],
-      "action": ["은근히", "눈치주는"],
-      "text":["퇴근", "눈치"],
+      "emotion": ["기대하는", "뭐가 뭔지 알 수 없는", "뭔가 아닌 것 같은", "어리둥절한"],
+      "action": ["눈치주는"],
+      "text": ["퇴근", "눈치"],
       "emoji": []
     },
     "description": "123"
@@ -326,11 +326,11 @@
     "title": "Yes I Can(나는 캔입니다)",
     "category": {
       "character": ["박명수"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["얼척없는", "어이없는", "힘찬", "의기양양한", "자신만만한"],
-      "action": ["경례하는"],
-      "text":["캔"],
+      "action": ["경례하는", "말하는"],
+      "text": ["캔"],
       "emoji": ["🫡"]
     },
     "description": "123"
@@ -340,11 +340,11 @@
     "title": "나이 많고 모자란...",
     "category": {
       "character": ["노홍철"],
-      "place": ["식당"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["멸시하는", "비난하는"],
-      "action": ["어중간한", "조롱하는", "약올리는"],
-      "text":["모자란"],
+      "emotion": ["멸시하는", "비난하는", "얕보는"],
+      "action": ["놀리는", "조롱하는", "약올리는"],
+      "text": ["모자란"],
       "emoji": []
     },
     "description": "123"
@@ -354,11 +354,11 @@
     "title": "남녀평등 & 두발의 자유화",
     "category": {
       "character": ["하하"],
-      "place": [],
+      "episode": ["무한도전 레전드"],
       "object": [],
       "emotion": ["용기나는", "흥분된", "자신감 있는", "기대에 부푼"],
-      "action": [],
-      "text":[],
+      "action": ["응시하는", "무작정 우기는", "밑도 끝도 없는"],
+      "text": ["자유화", "남녀평등"],
       "emoji": []
     },
     "description": "123"
@@ -368,25 +368,25 @@
     "title": "네가 하면 나도 한다",
     "category": {
       "character": ["하하"],
-      "place": ["강"],
+      "episode": ["술래잡기"],
       "object": [],
-      "emotion": ["싱싱한", "희열에 넘친", "자극된", "흥분된", "용기 나는", "살아있는"],
-      "action": ["뛰어들기", "다이빙"],
-      "text":[],
+      "emotion": ["희열에 넘친", "자극된", "흥분된", "용기 나는"],
+      "action": ["뛰어드는"],
+      "text": ["다이빙", "점프"],
       "emoji": []
     },
     "description": "123"
   },
   {
     "image": "28.png",
-    "title": "누군 이 회사 나오고 싶어서 나오는 줄 아십니까?",
+    "title": "누군 이 무한상사 나오고 싶어서 나오는 줄 아십니까?",
     "category": {
       "character": ["하하"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["반감이 가는", "불쾌한", "기분 상한", "신경질이 난", "분개한", "열 받는", "눈이 뒤집힌"],
-      "action": ["버럭하는", "큰소리 내는"],
-      "text":[],
+      "emotion": ["반감이 가는", "불쾌한", "신경질이 난", "분개한", "열 받는", "눈이 뒤집힌"],
+      "action": ["버럭하는", "큰소리 내는", "눈을 부릅 뜨는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -396,11 +396,11 @@
     "title": "눈 가리고 운전",
     "category": {
       "character": ["정형돈", "길"],
-      "place": ["자동차", "차"],
+      "episode": ["박명수의 소원을 말해봐"],
       "object": ["눈 가리개", "안대"],
-      "emotion": ["재미있는", "자신감 있는", "두근거리는"],
-      "action": ["운전 중"],
-      "text":[],
+      "emotion": ["기대되는", "자신감 있는", "두근거리는"],
+      "action": ["운전하는", "고집있는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -410,12 +410,12 @@
     "title": "눈치도 능력!",
     "category": {
       "character": ["하하"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["풀이 죽은", "기력이 없는", "초조한", "간담이 서늘해지는", "긴장한"],
-      "action": ["눈치없는 행동"],
-      "text":[],
-      "emoji": ["🙃"]
+      "emotion": ["기력이 없는", "초조한", "간담이 서늘해지는", "긴장한"],
+      "action": ["눈치없는", "긁적이는", "풀이 죽은"],
+      "text": [],
+      "emoji": []
     },
     "description": "123"
   },
@@ -424,11 +424,11 @@
     "title": "아버지 뭐하시노?",
     "category": {
       "character": ["김광규"],
-      "place": ["학교", "교실"],
+      "episode": ["명수는 12살"],
       "object": ["막대기", "회초리"],
-      "emotion": ["괴팍한", "성난", "화난" ,"신경질이 난"],
-      "action": [],
-      "text":[],
+      "emotion": ["괴팍한", "성난", "신경질이 난"],
+      "action": ["내려다 보는", "호통치는", "화내는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -438,25 +438,25 @@
     "title": "늦었다고 생각할 때가 너무 늦었어요",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["박명수의 소원을 말해봐"],
       "object": [],
-      "emotion": ["참담한", "막막한", "절망스러운", "안타까운", "울적한"],
-      "action": ["한심한 눈빛"],
-      "text":[],
+      "emotion": ["참담한", "막막한", "절망스러운", "안타까운", "측은한"],
+      "action": ["한심한 눈빛", "바라보는"],
+      "text": ["너무 늦었어요"],
       "emoji": []
     },
     "description": "123"
   },
   {
     "image": "33.png",
-    "title": "123",
+    "title": "빠르게 구르기 시작한 동공",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["박명수"],
+      "episode": ["진실게임"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["진땀나는", "초조한", "조마조마한", "안절부절 못하는"],
+      "action": ["눈이 커진"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -466,25 +466,25 @@
     "title": "다 나가 이... 다 나가",
     "category": {
       "character": ["유재석"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["화난", "격분한", "분개한", "성난", "노발대발한", "격노한"],
-      "action": [],
-      "text":["나가"],
-      "emoji": []
+      "emotion": ["격분한", "분개한", "성난", "노발대발한", "격노한"],
+      "action": ["화내는", "호통치는"],
+      "text": ["나가"],
+      "emoji": ["😡"]
     },
     "description": "123"
   },
   {
     "image": "35.png",
-    "title": "123",
+    "title": "대화 참 수준 높다",
     "category": {
       "character": ["박명수"],
-      "place": ["회식", "술자리"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["맥빠진", "지친", "부끄러운", "정떨어지는", "질린"],
-      "action": ["한심한 눈빛"],
-      "text":[],
+      "emotion": ["맥 빠진", "지친", "부끄러운", "정떨어지는", "질린"],
+      "action": ["한심한 눈빛", "읖조리는", "한숨 나오는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -494,11 +494,11 @@
     "title": "더러워서 못 해먹겠네",
     "category": {
       "character": ["박명수"],
-      "place": ["식당"],
+      "episode": ["니가 가라 하와이!"],
       "object": [],
       "emotion": ["섭섭한", "서러운", "속상한", "분한", "끓어오르는", "울화가 치미는", "열 받는"],
-      "action": [],
-      "text":[],
+      "action": ["화내는", "한탄하는"],
+      "text": ["폭발"],
       "emoji": ["😡"]
     },
     "description": "123"
@@ -508,11 +508,11 @@
     "title": "독침수거",
     "category": {
       "character": ["정실장"],
-      "place": [],
+      "episode": ["네 꿈을 펼쳐라!"],
       "object": ["볼펜"],
-      "emotion": ["어이없는", "의기양양한"],
-      "action": ["기가 막힌"],
-      "text":[],
+      "emotion": ["어이없는", "의기양양한", "기가 막힌"],
+      "action": ["뜻밖의", "응시하는", "눈을 부릅 뜨는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -522,26 +522,26 @@
     "title": "돈 벌려고 일하는데 돈을 거꾸러 가져가...",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["끝까지 간다"],
       "object": [],
-      "emotion": ["까마득한", "암담한", "화나는", "울화가 치미는", "풀이 죽은"],
-      "action": [],
-      "text":["돈"],
-      "emoji": []
+      "emotion": ["까마득한", "암담한", "울화가 치미는", "근심하는"],
+      "action": ["헛웃음 짓는", "근심하는"],
+      "text": ["돈"],
+      "emoji": ["🥲", "😮‍💨"]
     },
     "description": "123"
   },
   {
     "image": "39.png",
-    "title": "돈이 많은 친구가 좋아요? 정이 많은 친구가...",
+    "title": "보통 돈이 많은 친구들이 정이 많더라고요",
     "category": {
-      "character": ["박명수", "정형돈"],
-      "place": ["한옥"],
+      "character": ["정형돈"],
+      "episode": ["짝꿍"],
       "object": [],
-      "emotion": ["당당한", "만족스러운", "공감되는", "만족하는"],
-      "action": [],
-      "text":[],
-      "emoji": []
+      "emotion": ["당당한", "재미있는", "유쾌한"],
+      "action": ["익살스러운 표정"],
+      "text": [],
+      "emoji": ["😁"]
     },
     "description": "123"
   },
@@ -550,11 +550,11 @@
     "title": "돈이 세상에서 제일 중요한 거거든",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["무도 어린이집"],
       "object": [],
-      "emotion": ["차분한", "자신감 있는"],
-      "action": [],
-      "text":[],
+      "emotion": ["차분한", "담담한", "덤덤한"],
+      "action": ["바라보는", "말하는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -564,11 +564,11 @@
     "title": "동시대를 살고 있다는 게 믿기지 않네요...",
     "category": {
       "character": ["노홍철"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["한심한", "얕보는", "하찮은", "애석한"],
-      "action": ["약올리는", "조롱하는"],
-      "text":[],
+      "emotion": ["얕보는", "하찮은", "애석한", "믿기지가 않는"],
+      "action": ["약올리는", "조롱하는", "한심한 눈빛"],
+      "text": ["믿기지가 않네요"],
       "emoji": []
     },
     "description": "123"
@@ -578,39 +578,39 @@
     "title": "드디어 기어나온 잔진",
     "category": {
       "character": ["전진"],
-      "place": [],
+      "episode": ["꼬리잡기"],
       "object": [],
       "emotion": ["덤덤한", "멋쩍은", "민망한", "피곤한", "쉬고싶은"],
-      "action": [],
-      "text":[],
+      "action": ["긁적이는", "할말없는", "멍한"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
   },
   {
     "image": "43.png",
-    "title": "123",
+    "title": "형... 문제점도 거기...",
     "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "character": ["정준하"],
+      "episode": ["비긴 어게인"],
+      "object": ["머리"],
+      "emotion": ["얕보는", "하찮은", "애석한", "믿기지가 않는"],
+      "action": ["약올리는", "조롱하는", "한심한 눈빛"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
   },
   {
     "image": "44.png",
-    "title": "123",
+    "title": "때려치워!",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["박명수"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["격양된", "화난", "신경질이 난", "분개한", "열 받은", "격분한"],
-      "action": ["버럭하는", "큰소리 내는"],
-      "text":[],
+      "emotion": ["격양된", "신경질이 난", "분개한", "열 받은", "격분한"],
+      "action": ["버럭하는", "큰소리 내는", "화내는"],
+      "text": [],
       "emoji": ["😡", "😠"]
     },
     "description": "123"
@@ -620,11 +620,11 @@
     "title": "망했어 재석이형 때문에!",
     "category": {
       "character": ["정형돈"],
-      "place": ["주방"],
+      "episode": ["식객"],
       "object": [],
-      "emotion": ["허탈한", "화난", "기분 상한", "분개한", "당혹스러운"],
-      "action": ["뿌리치고 나가는"],
-      "text":["망했어", "뚜껑"],
+      "emotion": ["허탈한", "기분 상한", "분개한", "당혹스러운"],
+      "action": ["뿌리치고 나가는", "화내는"],
+      "text": ["망했어", "뚜껑"],
       "emoji": []
     },
     "description": "123"
@@ -634,11 +634,11 @@
     "title": "모두를 웃게 한다는 부장님 유머",
     "category": {
       "character": ["유재석"],
-      "place": ["회사", "회식"],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["억지스러운", "마음이 내키지 않는", "멋쩍은"],
-      "action": [],
-      "text":["부장님"],
+      "action": ["눈치보는"],
+      "text": ["부장님"],
       "emoji": []
     },
     "description": "123"
@@ -648,11 +648,11 @@
     "title": "멍~",
     "category": {
       "character": ["정준하"],
-      "place": [],
+      "episode": ["꼬리잡기"],
       "object": [],
-      "emotion": ["어리둥절한", "아무생각없는", "멍한"],
-      "action": [],
-      "text":[],
+      "emotion": ["어리둥절한", "아무생각없는"],
+      "action": ["멍한", "긁적이는"],
+      "text": [],
       "emoji": ["😐"]
     },
     "description": "123"
@@ -662,11 +662,11 @@
     "title": "모자라면서 나쁜 친구야!",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["얕보는", "멸시하는", "기분 상한"],
       "action": [],
-      "text":[],
+      "text": [],
       "emoji": ["🥲", "😅"]
     },
     "description": "123"
@@ -676,12 +676,12 @@
     "title": "몸 개그 명중",
     "category": {
       "character": ["길"],
-      "place": ["눈"],
+      "episode": ["형! 어디가"],
       "object": [],
-      "emotion": ["황당함", "기분 상한", "당혹스러운"],
-      "action": [],
-      "text":[],
-      "emoji": []
+      "emotion": ["황당함", "기분 상한", "당혹스러운", "어리둥절한"],
+      "action": ["멍한", "어이없어 웃는"],
+      "text": ["명중"],
+      "emoji": ["😯"]
     },
     "description": "123"
   },
@@ -690,12 +690,12 @@
     "title": "못 참겠어요!",
     "category": {
       "character": ["노홍철"],
-      "place": ["옥상"],
+      "episode": ["다이어트 미션"],
       "object": [],
       "emotion": ["흥분한", "황홀한", "만족스러운", "생기가 도는", "들뜬"],
-      "action": ["초코 범벅"],
-      "text":["초코 분수"],
-      "emoji": ["🥴"]
+      "action": ["고집있는", "체념한"],
+      "text": ["초코 분수"],
+      "emoji": []
     },
     "description": "123"
   },
@@ -704,11 +704,11 @@
     "title": "얜... 무리수야",
     "category": {
       "character": ["유재석", "길"],
-      "place": [],
+      "episode": ["아이돌"],
       "object": [],
-      "emotion": ["서먹한", "멋쩍은", "쑥스러운"],
-      "action": [],
-      "text":[],
+      "emotion": ["멋쩍은", "쑥스러운", "뻘쭘한"],
+      "action": ["무작정 우기는", "응시하는", "바라보는", "긁적이는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -718,11 +718,11 @@
     "title": "무야호",
     "category": {
       "character": ["최규재"],
-      "place": ["알래스카"],
+      "episode": ["오 마이 텐트"],
       "object": [],
       "emotion": ["멋쩍은", "당황한", "어이없는", "골 떄리는"],
-      "action": ["함성", "구호"],
-      "text":["무한~ 무야호"],
+      "action": ["큰소리 내는"],
+      "text": ["무한~ 무야호"],
       "emoji": []
     },
     "description": "123"
@@ -732,11 +732,11 @@
     "title": "무제한 이기주의",
     "category": {
       "character": ["유재석", "박명수", "노홍철"],
-      "place": [],
+      "episode": ["하하의 게릴라 콘서트"],
       "object": [],
-      "emotion": ["뻔뻔스러운", "당당한"],
-      "action": [],
-      "text":[],
+      "emotion": ["뻔뻔한", "당당한", "어이없는"],
+      "action": ["거만한 표정", "익살스러운 표정", "고집있는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -746,25 +746,25 @@
     "title": "무한재석교",
     "category": {
       "character": ["유재석"],
-      "place": [],
+      "episode": ["추적! 빨간 하이힐"],
       "object": [],
-      "emotion": ["황홀한", "환희의 찬", "어이없는"],
-      "action": [],
-      "text":[],
+      "emotion": ["황홀한", "환희의 찬", "어이없는", "황당한"],
+      "action": ["웃고 있는", "바라보는"],
+      "text": [],
       "emoji": ["🙏", "🤗"]
     },
     "description": "123"
   },
   {
     "image": "55.png",
-    "title": "집에 가고 싶다.",
+    "title": "지금도 집에 가고 싶다",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["진실게임"],
       "object": [],
-      "emotion": ["뻔뻔스러운", "뻔뻔함", "당당한"],
-      "action": [],
-      "text":["진짜 모름"],
+      "emotion": ["뻔뻔한", "당당한", "의기양양한", "얼척없는", "어이없는"],
+      "action": ["고집있는", "밑도 끝도 없는"],
+      "text": ["질문"],
       "emoji": []
     },
     "description": "123"
@@ -774,11 +774,11 @@
     "title": "아직도 아파 아직도 아파",
     "category": {
       "character": ["노홍철"],
-      "place": ["한의원"],
+      "episode": ["완전 남자다잉!"],
       "object": [],
       "emotion": ["아픈", "안절부절 못하는", "진땀나는", "불안한", "겁에 질린"],
-      "action": ["호들갑"],
-      "text":["침"],
+      "action": ["호들갑 떠는"],
+      "text": ["침"],
       "emoji": ["😨"]
     },
     "description": "123"
@@ -788,11 +788,11 @@
     "title": "민망함에 풀린 관약근",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["민망한", "곤혹스러운", "쑥스러운", "멋쩍은"],
-      "action": [],
-      "text":["방구", "괄약근"],
+      "emotion": ["민망한", "곤혹스러운", "쑥스러운", "멋쩍은", "민망한", "당황한"],
+      "action": ["긁적이는", "할말없는"],
+      "text": ["방구", "괄약근"],
       "emoji": []
     },
     "description": "123"
@@ -802,11 +802,11 @@
     "title": "바리바리 양세바리",
     "category": {
       "character": ["양세형"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["억지스러운", "뻔뻔함", "거북한", "당당한"],
-      "action": [],
-      "text":["자기소개"],
+      "emotion": ["억지스러운", "뻔뻔한", "거북한", "당당한", "어이없는"],
+      "action": ["익살스러운 표정", "밑도 끝도 없는"],
+      "text": ["자기소개"],
       "emoji": []
     },
     "description": "123"
@@ -816,11 +816,11 @@
     "title": "박보검~나 웃겨",
     "category": {
       "character": ["하하"],
-      "place": [],
+      "episode": ["2018 평창"],
       "object": [],
-      "emotion": ["억지스러운", "뻔뻔함"],
-      "action": [],
-      "text":["검나 웃겨"],
+      "emotion": ["억지스러운", "뻔뻔한", "당당한", "어이없는"],
+      "action": ["익살스러운 표정", "밑도 끝도 없는"],
+      "text": ["검나 웃겨"],
       "emoji": []
     },
     "description": "123"
@@ -830,11 +830,11 @@
     "title": "밤길 조심해!",
     "category": {
       "character": ["박명수"],
-      "place": ["회사", "회식"],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["흥분한", "성난", "눈이 뒤집힌", "격분한", "열 받은"],
-      "action": ["버럭하는", "큰소리 내는"],
-      "text":["밤길"],
+      "action": ["버럭하는", "큰소리 내는", "화내는"],
+      "text": ["밤길"],
       "emoji": []
     },
     "description": "123"
@@ -844,11 +844,11 @@
     "title": "사람이 아니에요?",
     "category": {
       "character": ["노홍철"],
-      "place": ["한의원"],
+      "episode": ["완전 남자다잉!"],
       "object": [],
-      "emotion": ["정 떨어지는", "밥맛 떨어지는", "얕보는", "비난하는", "한심한"],
-      "action": ["한심한 눈빛"],
-      "text":[],
+      "emotion": ["정 떨어지는", "밥맛 떨어지는", "얕보는", "비난하는"],
+      "action": ["한심한 눈빛", "조롱하는", "놀리는", "약올리는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -858,11 +858,11 @@
     "title": "밥 갖고 와!",
     "category": {
       "character": ["노홍철"],
-      "place": [],
+      "episode": ["무한도전 TV"],
       "object": [],
       "emotion": ["눈이 뒤집힌", "분개한", "격분한", "노발대발한", "격노한", "괴팍한"],
-      "action": [],
-      "text":["버럭하는", "큰소리 내는", "눈이 커진"],
+      "action": ["버럭하는", "큰소리 내는", "눈이 커진"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -872,10 +872,10 @@
     "title": "북극곰은 사람을 찢어",
     "category": {
       "character": ["정준하"],
-      "object": [],
+      "object": ["릴레이툰"],
       "emotion": ["황당한", "기분 상한", "불쾌한", "씁쓸한"],
-      "action": [],
-      "text":["북극곰"],
+      "action": ["어이없이 웃는", "헛웃음 짓는"],
+      "text": ["북극곰"],
       "emoji": ["🥲"]
     },
     "description": "123"
@@ -885,11 +885,11 @@
     "title": "불쾌의 자유가 있는 나라입니다",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["법정 공방"],
       "object": [],
-      "emotion": ["명랑한", "당당한", "차분한", "자신감 있는", "엄격", "진지", "엄근진"],
-      "action": [],
-      "text":[],
+      "emotion": ["명랑한", "당당한", "차분한", "자신감 있는", "엄격한", "진지한", "엄근진"],
+      "action": ["바라보는", "말하는"],
+      "text": ["불쾌"],
       "emoji": ["😐"]
     },
     "description": "123"
@@ -899,11 +899,11 @@
     "title": "사내 분위기 파악도 중요!",
     "category": {
       "character": ["정준하"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["풀이 죽은", "기력이 없는", "초조한", "간담이 서늘해지는", "긴장한"],
-      "action": ["눈치"],
-      "text":[],
+      "emotion": ["기력이 없는", "초조한", "간담이 서늘해지는", "긴장한"],
+      "action": ["눈치보는", "풀이 죽은"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -913,11 +913,11 @@
     "title": "사랑아, 보영해",
     "category": {
       "character": ["신정호"],
-      "place": ["길가"],
+      "episode": ["무한택배"],
       "object": [],
-      "emotion": ["애정어린", "즐거운", "사랑하는", "재미있는", "흐뭇한", "긴장한"],
+      "emotion": ["애정어린", "즐거운", "사랑하는", "재미있는", "흐뭇한"],
       "action": ["긴장한 말투"],
-      "text":[],
+      "text": ["사랑아"],
       "emoji": ["😍"]
     },
     "description": "123"
@@ -927,11 +927,11 @@
     "title": "사실 뭔지도 모르고 그냥 한 겁니다 솔직히",
     "category": {
       "character": ["정준하"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["어이없는", "황당함", "애석한", "구슬픈", "무기력한", "침울한"],
-      "action": ["침울해하는"],
-      "text":[],
+      "emotion": ["어이없는", "황당한", "애석한", "구슬픈"],
+      "action": ["침울해하는", "체념한", "좌절한", "무기력한"],
+      "text": [],
       "emoji": ["🥲"]
     },
     "description": "123"
@@ -941,11 +941,11 @@
     "title": "사장님이 보고 있다",
     "category": {
       "character": [],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": ["액자"],
       "emotion": ["성가신", "귀찮은", "지겨운"],
       "action": ["주시하는"],
-      "text":["교훈"],
+      "text": ["교훈"],
       "emoji": []
     },
     "description": "123"
@@ -955,11 +955,11 @@
     "title": "사직서 사건, 심정은?",
     "category": {
       "character": ["박명수"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["언짢은", "불쾌한", "지겨워진", "꿀꿀한" ],
-      "action": ["아니꼬운 상태"],
-      "text":[],
+      "emotion": ["언짢은", "불쾌한", "지겨워진", "꿀꿀한"],
+      "action": ["아니꼬운 상태", "어이없이 웃는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -969,11 +969,11 @@
     "title": "사회생활 100점",
     "category": {
       "character": ["노홍철"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["만족스러운", "벅찬", "환희에 찬", "기쁜", "기분 좋은"],
-      "action": [],
-      "text":[],
+      "action": ["입꼬리 올라가는"],
+      "text": [],
       "emoji": ["😁", "😄"]
     },
     "description": "123"
@@ -983,11 +983,11 @@
     "title": "산은 산이고 길은 길이로다",
     "category": {
       "character": ["길"],
-      "place": [],
+      "episode": ["무한 춘향뎐"],
       "object": [],
-      "emotion": ["웃긴", "어이없는", "당당함", "뻔뻔함"],
+      "emotion": ["웃긴", "어이없는", "당당함", "뻔뻔함", "멋쩍은"],
       "action": [],
-      "text":["스님"],
+      "text": ["스님"],
       "emoji": ["😗"]
     },
     "description": "123"
@@ -997,11 +997,11 @@
     "title": "상상 그 이상",
     "category": {
       "character": ["길"],
-      "place": [],
-      "object": ["놀라운", "기분 좋게 놀란", "만족한"],
+      "episode": ["무한상사"],
+      "object": ["놀라운", "기분 좋게 놀란", "만족스러운"],
       "emotion": ["눈이 커진"],
       "action": [],
-      "text":["상상"],
+      "text": ["상상"],
       "emoji": []
     },
     "description": "123"
@@ -1011,11 +1011,11 @@
     "title": "상식적으로 이해할 수 없는 행동",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["무도 탐정 사무소"],
       "object": [],
       "emotion": ["어이없는", "당당함", "뻔뻔함"],
       "action": [],
-      "text":[],
+      "text": [],
       "emoji": ["😗"]
     },
     "description": "123"
@@ -1025,11 +1025,11 @@
     "title": "성공은 1%의 재능과 99%의 빽",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["비긴 어게인"],
       "object": [],
       "emotion": ["약오르는", "어이없는", "골때리는"],
       "action": [],
-      "text":["퀴즈"],
+      "text": ["퀴즈"],
       "emoji": []
     },
     "description": "123"
@@ -1039,11 +1039,11 @@
     "title": "수준 미달은 강퇴",
     "category": {
       "character": ["정준하"],
-      "place": ["강당"],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["주눅 든", "슬픈", "좌절한"],
       "action": ["고개를 푹"],
-      "text":[],
+      "text": [],
       "emoji": ["🥲"]
     },
     "description": "123"
@@ -1053,11 +1053,11 @@
     "title": "시선 회피",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["멋쩍음", "불편한", "낯간지러운", "거북한", "긴장한"],
-      "action": ["시선"],
-      "text":[],
+      "action": ["바라보는"],
+      "text": [],
       "emoji": ["😶‍🌫️", "🫥"]
     },
     "description": "123"
@@ -1067,25 +1067,25 @@
     "title": "실례가 안 된다면 아이스크림 하나만 사주십시오",
     "category": {
       "character": ["노홍철"],
-      "place": ["차"],
+      "episode": ["여드름 브레이크"],
       "object": ["아이스크림"],
-      "emotion": ["뻔뻔함", "약오르는", "정 떨어지는", "맥 빠진"],
-      "action": ["철판", "뻔뻔한 얼굴"],
-      "text":[],
+      "emotion": ["뻔뻔한", "약오르는", "정 떨어지는", "맥 빠진"],
+      "action": ["거만한 표정"],
+      "text": ["아이스크림"],
       "emoji": []
     },
     "description": "123"
   },
   {
     "image": "78.png",
-    "title": "123",
+    "title": "돈이 많은 친구가 좋아요? 정이 많은 친구가...",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["박명수"],
+      "episode": ["짝꿍"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["흥미로운", "웃긴"],
+      "action": ["넌지시 말하는"],
+      "text": ["질문"],
       "emoji": []
     },
     "description": "123"
@@ -1094,12 +1094,12 @@
     "image": "79.png",
     "title": "쓰레기 같은 고민 했구나",
     "category": {
-      "character": ["김혜자"],
-      "place": [],
+      "character": ["무한뉴스"],
+      "episode": [],
       "object": [],
-      "emotion": ["하찮은", "멸시하는", "애석한"],
-      "action": [],
-      "text":["인터뷰"],
+      "emotion": ["하찮은", "멸시하는", "애석한", "못마땅한"],
+      "action": ["담담하게 말하는", "질책하는"],
+      "text": ["인터뷰"],
       "emoji": []
     },
     "description": "123"
@@ -1109,151 +1109,837 @@
     "title": "터지지 않아 심장은... 잘 터지지 않아...",
     "category": {
       "character": ["박명수"],
-      "place": ["엘레베이터"],
+      "episode": ["에어로빅에 도전하다"],
       "object": [],
-      "emotion": ["측은한", "걱정스러운"],
-      "action": ["다독하는"],
-      "text":["심장"],
+      "emotion": ["측은한", "걱정하는"],
+      "action": ["다독이는"],
+      "text": ["심장"],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "81.png",
+    "title": "아... 저를 추천합니다",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["박명수"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["뻔뻔한", "당당한", "어이없는", "웃긴"],
+      "action": ["거만한 표정", "무작정 우기는", "밑고 끝도 없는", "고집있는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "82.png",
+    "title": "아유... 하기 싫어...",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["박명수"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["맥 빠진", "지친"],
+      "action": ["한숨쉬는", "한탄하는", "무기력한"],
+      "text": [],
+      "emoji": ["😮‍💨"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "83.png",
+    "title": "아저씨 2만원만 주면 안돼요?",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["간절히 하고 싶어하는"],
+      "action": ["막무가내인", "고집있는", "마음대로 말하는"],
+      "text": ["진상"],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "84.png",
+    "title": "아픈척해서 인기 끌려고 그러시는 거죠?",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["유재석"],
+      "episode": ["박명수의 소원을 말해봐"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["어이없는", "당당한", "뻔뻔한", "얼척없는"],
+      "action": ["막무가내인", "익살스러운 표정", "조롱하는", "깐족거리는", "약올리는"],
+      "text": ["질문"],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "85.png",
+    "title": "앵귀리지 한인회관",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["정형돈"],
+      "episode": ["오 마이 텐트"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["멋쩍은", "쑥스러운", "민망한", "뻘쭘한"],
+      "action": ["긁적이는", "할말없는"],
+      "text": ["앵귀리지"],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "86.png",
+    "title": "약간... 모자라지만 착한 친구",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["정준한"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["멋쩍은", "어이없는", "황당한", "침울한", "뻘쭘한"],
+      "action": ["큰소리 내는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "87.png",
+    "title": "얘기하면 분명히 놀릴 것 같아서...",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["유재석"],
+      "episode": ["식스맨"],
       "object": [],
-      "emotion": [],
+      "emotion": ["불안한", "섭섭한", "불편한", "근심 가득한"],
       "action": [],
-      "text":[],
+      "text": [],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "88.png",
+    "title": "본 건 있으니 모자란 기억력",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["정형돈"],
+      "episode": ["무도 탐정 사무소"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["의기양양한", "격양된", "분한", "멋쩍은", "난처한"],
+      "action": ["마음대로 말하는", "막무가내인", "생각이 안나는"],
+      "text": ["모자란 기억력"],
+      "emoji": ["😰"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "89.png",
+    "title": "엄마~~~ 나 이번에~~~",
+    "category": {
+      "character": ["정형돈"],
+      "episode": ["벼농사"],
+      "object": [],
+      "emotion": ["의기양양한", "당당한", "힘찬", "자신만만한"],
+      "action": ["말하는", "자랑하는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "90.png",
+    "title": "엄마를 바꿀 수는 없잖아요",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["박명수"],
+      "episode": ["나쁜 기억 지우개"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["강렬한", "유쾌한", "당당한", "재미있는"],
+      "action": ["막무가내인", "담담하게 말하는", "조언하는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "91.png",
+    "title": "어떻게 해결을 해 드려요~!",
     "category": {
-      "character": ["123"],
-      "place": [],
+      "character": ["정준하"],
+      "episode": ["나쁜 기억 지우개"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["막막한", "기분이 상한", "막연한", "불만스러운", "못마땅한"],
+      "action": ["웃고있는", "웃고 떠드는", "인상쓰는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
   },
   {
-    "image": "7.png",
-    "title": "123",
+    "image": "92.png",
+    "title": "여러분들 10년 후의 여자친구를 결정합니다",
+    "category": {
+      "character": ["노홍철"],
+      "episode": ["악마는 구리다를 입는다"],
+      "object": [],
+      "emotion": ["근엄한", "진지한", "냉혹한"],
+      "action": ["담담하게 말하는", "훈계하는", "조언하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "93.png",
+    "title": "예 핑계네요!",
+    "category": {
+      "character": ["양세찬"],
+      "episode": ["릴레이툰"],
+      "object": [],
+      "emotion": ["단호한", "화난", "격분한", "열 받은"],
+      "action": ["호통치는", "혼내는", "훈계하는", "큰소리 내는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "94.png",
+    "title": "오빠... 오빠상~",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["유쾌한", "재미있는"],
+      "action": ["장난스런", "웃고 떠드는", "웃고 있는"],
+      "text": [],
+      "emoji": ["😆", "😄"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "95.png",
+    "title": "왜요?",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["짝꿍"],
+      "object": [],
+      "emotion": ["기분 상한", "불쾌한"],
+      "action": ["어이없이 웃는", "눈을 부릅 뜨는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "96.png",
+    "title": "요즘 최첨단 시대 아니겠습니까...",
+    "category": {
+      "character": ["하하"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["여유로운", "든든한"],
+      "action": ["중얼거리는", "담담하게 말하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "97.png",
+    "title": "우리 다 배고플 나이입니다!",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["당당한", "의기양양한"],
+      "action": ["거만한 표정", "큰소리 내는", "버럭하는", "눈을 부릅 뜨는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "98.png",
+    "title": "우리 할아버진 할머니가 두 분이셨어",
+    "category": {
+      "character": ["길"],
+      "episode": ["명수는 12살"],
+      "object": [],
+      "emotion": ["덤덤한", "담담한", "당당한"],
+      "action": ["담담하게 말하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "99.png",
+    "title": "우리 무한상사가 발전이 없는거야!",
+    "category": {
+      "character": ["정준하", "유재석"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["신경질이 난", "열 받는", "격분한", "성난"],
+      "action": ["큰소리 내는", "버럭하는", "화내는", "호통치는"],
+      "text": [],
+      "emoji": ["😠"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "100.png",
+    "title": "웃기네! 화로구이죠?",
+    "category": {
+      "character": ["하하"],
+      "episode": ["짝꿍"],
+      "object": [],
+      "emotion": ["멸시하는", "비난하는", "얕보는"],
+      "action": ["익살스러운 표정", "놀리는", "조롱하는", "약올리는"],
+      "text": [],
+      "emoji": ["🤓"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "101.png",
+    "title": "이건 욕 아닙니다!",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["식스맨"],
+      "object": [],
+      "emotion": ["우려하는"],
+      "action": ["버럭하는", "호통치는"],
+      "text": [],
+      "emoji": ["😟"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "102.png",
+    "title": "이거저것... 놉니다",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["무도를 부탁해"],
+      "object": [],
+      "emotion": ["의기소침한", "기력이 없는", "맥 빠진", "무료한"],
+      "action": ["무기력한", "멍한"],
+      "text": [],
+      "emoji": ["🫤"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "103.png",
+    "title": "이게 뭐 잘못된 얘기야?",
+    "category": {
+      "character": ["정준하"],
+      "episode": ["릴레이툰"],
+      "object": [],
+      "emotion": ["노발대발한", "흥분한", "성난", "신경질이 난"],
+      "action": ["눈이 커진", "반박하는", "화내는", "응시하는"],
+      "text": [],
+      "emoji": ["😠"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "104.png",
+    "title": "이제 남남이야!",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["형.광.팬 캠프"],
+      "object": [],
+      "emotion": ["뻔뻔한", "어이없는", "격양된", "의기양양한"],
+      "action": ["무작정 우기는", "밑도 끝도 없는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "105.png",
+    "title": "일상생활에 충실하세요~",
+    "category": {
+      "character": ["황광희"],
+      "episode": ["나쁜 기억 지우개"],
+      "object": [],
+      "emotion": ["뻔뻔한", "당당한", "어이없는"],
+      "action": ["익살스러운 표정"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "106.png",
+    "title": "입을 가만 있으라고 입을!",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["법정 공방"],
+      "object": [],
+      "emotion": ["성난", "격양된", "노발대발한", "흥분한", "분개한", "눈이 뒤집힌"],
+      "action": ["버럭하는", "화내는", "큰소리 내는", "눈을 부릅 뜨는"],
+      "text": [],
+      "emoji": ["😡"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "107.png",
+    "title": "자네는 누가 뽑았나?",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["검연쩍은", "성가신"],
+      "action": ["바라보는", "한심한 눈빛"],
+      "text": [],
+      "emoji": ["😒"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "108.png",
+    "title": "자... 이게 클릭이야",
+    "category": {
+      "character": ["노홍철"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["하찮은", "멸시하는", "모멸적인", "비참한"],
+      "action": ["깔보는", "내려다보는", "한심한 눈빛"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "109.png",
+    "title": "자네는 다른 일 한 번 찾아보는게...",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["모멸적인", "멸시하는", "측은한"],
+      "action": ["한심한 눈빛"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "110.png",
+    "title": "잘하는 건요? 없어요!",
+    "category": {
+      "character": ["정형돈"],
+      "episode": ["짝꿍"],
+      "object": [],
+      "emotion": ["어이없는", "불만스러운", "못마땅한", "언짢은"],
+      "action": ["무시하는", "막무가내인"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "111.png",
+    "title": "잠을 자도 피로가 안 풀리냐",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["짜증난", "불만스러운", "신경질 나는"],
+      "action": ["중얼거리는", "인상쓰는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "112.png",
+    "title": "저 사표를 꼭 받아내리라",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["간절히 하고 싶어하는", "끓어오르는", "분한", "울화가 치미는"],
+      "action": ["다짐하는", "응시하는", "노려보는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "113.png",
+    "title": "저만의 세상이 있어요",
+    "category": {
+      "character": ["길"],
+      "episode": ["텔레파시"],
+      "object": [],
+      "emotion": ["화난", "분한", "못마땅한", "열받는", "기분이 상한"],
+      "action": ["호통치는", "혼내는", "짜증내는"],
+      "text": ["저만의 세상이 있어요"],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "114.png",
+    "title": "저질댄스",
+    "category": {
+      "character": ["노홍철"],
+      "episode": ["모내기"],
+      "object": [],
+      "emotion": ["열중하는", "흥분된", "고무된", "기쁨에 넘치는"],
+      "action": ["춤을 추는", "노래 부르는", "소리 지르는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "115.png",
+    "title": "정말 본인이 2인자라고 생각하십니까",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["법정 공방"],
+      "object": [],
+      "emotion": ["하찮은", "못마땅한", "넌더리나는"],
+      "action": ["담담하게 말하는", "의문을 갖는", "무시하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "116.png",
+    "title": "정신이 문제가...",
+    "category": {
+      "character": ["노홍철"],
+      "episode": ["완전 남자다잉!"],
+      "object": ["머리"],
+      "emotion": ["무시하는", "비난하는", "얕보는"],
+      "action": ["머리를 만지는"],
+      "text": ["정신이 문제가"],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "117.png",
+    "title": "정신차려 이 각박한 세상 속에서",
+    "category": {
+      "character": ["하하"],
+      "episode": ["행쇼"],
+      "object": [],
+      "emotion": ["격양된", "노발대발한", "격노한", "흥분한", "성난"],
+      "action": ["호통치는", "선포하는", "혼내는"],
+      "text": ["정신차려 이 각박한 세상 속에서"],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "118.png",
+    "title": "제가 그 중에 한 명이었습니다",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["법정 공방"],
+      "object": [],
+      "emotion": ["차분한", "구슬픈", "쓸쓸한", "공허한"],
+      "action": ["읖조리는", "고백하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "119.png",
+    "title": "지금 여러분 공부 안 하면",
+    "category": {
+      "character": ["유재석", "박명수"],
+      "episode": ["악마는 구린다를 입는다"],
+      "object": [],
+      "emotion": ["차분한", "한스러운", "근심하는"],
+      "action": ["훈계하는", "조언하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "120.png",
+    "title": "제발 가랑이 밑을 허락해주십시오",
+    "category": {
+      "character": ["정준하"],
+      "episode": ["러시안 룰렛"],
+      "object": [],
+      "emotion": ["간절히 하고싶어하는", "집중하는", "열렬한", "패기만만한"],
+      "action": ["땅을 기는", "위로 올려다보는", "집요한"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "121.png",
+    "title": "족발당수",
+    "category": {
+      "character": ["길"],
+      "episode": ["SOS 해양구조대"],
+      "object": [],
+      "emotion": ["꼴보기 싫은", "처량한", "열받는", "분한"],
+      "action": ["멀리 날아가는", "발로차는", "걷어차인"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "122.png",
+    "title": "죄송한데 내 새끼입니다",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["식스맨"],
+      "object": [],
+      "emotion": ["자랑스러운", "반가운", "흐뭇한"],
+      "action": ["선포하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "123.png",
+    "title": "죽음과 결혼은 뒤로 미룰수록 좋다",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["자리분양"],
+      "object": [],
+      "emotion": ["처량한", "그리운", "후회하는"],
+      "action": ["조언하는"],
+      "text": ["뒤로 미룰수록 좋다"],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "124.png",
+    "title": "준비한 모든게 백지화",
+    "category": {
+      "character": ["박명수"],
+      "episode": [],
+      "object": [],
+      "emotion": ["낙심한", "막막한", "자포자기한", "절망스러운"],
+      "action": ["멍 때리는", "생각이 안나는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "125.png",
+    "title": "지 새끼는 지가(?) 마음대로...",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["식스맨"],
+      "object": [],
+      "emotion": ["꼴보기 싫은", "넌더리나는"],
+      "action": ["제안하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "126.png",
+    "title": "지금 몇신데 벌써 점심 주문을 해!",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["화난", "열받는", "분한"],
+      "action": ["호통치는", "화내는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "127.png",
+    "title": "진기명기",
+    "category": {
+      "character": ["전진"],
+      "episode": ["2008 베이징 올림픽"],
+      "object": ["배드민턴 콕"],
+      "emotion": ["신기한", "짜릿한", "당황스러운"],
+      "action": ["황당한 결과"],
+      "text": ["진기명기"],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "128.png",
+    "title": "진지하게 얘기하는 거예요",
+    "category": {
+      "character": ["노홍철"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["기대에 부푼", "진정되는", "차분한", "진지한"],
+      "action": ["조곤조곤 말하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "129.png",
+    "title": "진짜 한 번 너 사랑한다",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["니가 가라 하와이!"],
+      "object": [],
+      "emotion": ["의기양양한", "강렬한", "활기찬"],
+      "action": ["마음대로 말하는", "넌지시 말하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "130.png",
+    "title": "질문을 잘 이해를 못했습니다",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["나쁜 기억 지우개"],
+      "object": [],
+      "emotion": ["덤덤한", "차분한"],
+      "action": ["담담하게 말하는", "차분한", "말하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "131.png",
+    "title": "참... 많이 차이 나는구먼",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["하찮은", "멸시하는", "애석한", "못마땅한"],
+      "action": ["담담하게 말하는", "질책하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "132.png",
+    "title": "참을 수 없었구나",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["애석한", "구슬픈"],
+      "action": ["담담하게 말하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "133.png",
+    "title": "참... 좋다!",
+    "category": {
+      "character": ["정준하"],
+      "episode": ["무한택배"],
+      "object": [],
+      "emotion": ["만족스러운", "기쁜", "기분 좋은", "환희에 찬"],
+      "action": ["웃고 있는", "바라보는"],
+      "text": [],
+      "emoji": ["😄"]
+    },
+    "description": "123"
+  },
+  {
+    "image": "134.png",
+    "title": "처음엔 부러웠는데 10년을 이러고 있으니...",
+    "category": {
+      "character": ["노홍철"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["하찮은", "얕보는", "멸시하는"],
+      "action": ["깔보는", "내려다보는", "읖조리는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "135.png",
+    "title": "치열하겠는데?",
+    "category": {
+      "character": ["하하"],
+      "episode": ["짝꿍"],
+      "object": [],
+      "emotion": ["느긋한", "덤덤한", "차분한"],
+      "action": ["담담하게 말하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "136.png",
+    "title": "친해지는 게 싫어!",
+    "category": {
+      "character": ["박명수"],
+      "episode": ["형.광.펜 텐트"],
+      "object": [],
+      "emotion": ["반기지 않는", "싫어하는", "소심한"],
+      "action": ["풀이 죽은"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "137.png",
+    "title": "컴퓨터 수작업",
+    "category": {
+      "character": ["하하"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["어이없는", "얼척없는", "즐기는", "당당한"],
+      "action": ["무작정 우기는", "고집있는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "138.png",
+    "title": "컴퓨터는 뭐하러 뒀습니까?",
+    "category": {
+      "character": ["유재석"],
+      "episode": ["무한상사"],
+      "object": [],
+      "emotion": ["어이없는", "열 받은", "단호한"],
+      "action": ["호통치는", "혼내는", "훈계하는"],
+      "text": [],
+      "emoji": []
+    },
+    "description": "123"
+  },
+  {
+    "image": "139.png",
+    "title": "토네이도",
     "category": {
       "character": ["123"],
-      "place": [],
+      "episode": ["무한도전 TV"],
       "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
+      "emotion": ["두려운", "혼란스러운", "곤혹스러운"],
+      "action": ["휘몰아치는"],
+      "text": [],
       "emoji": []
     },
     "description": "123"
@@ -1263,10 +1949,10 @@
     "title": "퇴근도 눈치껏",
     "category": {
       "character": ["정형돈"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
-      "emotion": ["마음이 내키지 않는", "우울한", "풀이 죽은", "침울한"],
-      "action": ["긁적이는", "침묵하는", "참는"],
+      "emotion": ["마음이 내키지 않는", "우울한", "침울한"],
+      "action": ["긁적이는", "침묵하는", "참는", "풀이 죽은"],
       "text":[],
       "emoji": []
     },
@@ -1277,847 +1963,7 @@
     "title": "하루에도 400번씩 합니다!",
     "category": {
       "character": ["박명수"],
-      "place": [],
-      "object": [],
-      "emotion": ["고무된", "자랑스러운", "희열에 넘친"],
-      "action": ["바라보는", "말하는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "140",
-    "title": "퇴근도 눈치껏",
-    "category": {
-      "character": ["정형돈"],
-      "place": ["회사"],
-      "object": [],
-      "emotion": ["마음이 내키지 않는", "우울한", "풀이 죽은", "침울한"],
-      "action": ["긁적이는", "침묵하는", "참는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "141",
-    "title": "하루에도 400번씩 합니다!",
-    "category": {
-      "character": ["박명수"],
-      "place": [],
-      "object": [],
-      "emotion": ["고무된", "자랑스러운", "희열에 넘친"],
-      "action": ["바라보는", "말하는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "140",
-    "title": "퇴근도 눈치껏",
-    "category": {
-      "character": ["정형돈"],
-      "place": ["회사"],
-      "object": [],
-      "emotion": ["마음이 내키지 않는", "우울한", "풀이 죽은", "침울한"],
-      "action": ["긁적이는", "침묵하는", "참는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "141",
-    "title": "하루에도 400번씩 합니다!",
-    "category": {
-      "character": ["박명수"],
-      "place": [],
-      "object": [],
-      "emotion": ["고무된", "자랑스러운", "희열에 넘친"],
-      "action": ["바라보는", "말하는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "140",
-    "title": "퇴근도 눈치껏",
-    "category": {
-      "character": ["정형돈"],
-      "place": ["회사"],
-      "object": [],
-      "emotion": ["마음이 내키지 않는", "우울한", "풀이 죽은", "침울한"],
-      "action": ["긁적이는", "침묵하는", "참는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "141",
-    "title": "하루에도 400번씩 합니다!",
-    "category": {
-      "character": ["박명수"],
-      "place": [],
-      "object": [],
-      "emotion": ["고무된", "자랑스러운", "희열에 넘친"],
-      "action": ["바라보는", "말하는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "140",
-    "title": "퇴근도 눈치껏",
-    "category": {
-      "character": ["정형돈"],
-      "place": ["회사"],
-      "object": [],
-      "emotion": ["마음이 내키지 않는", "우울한", "풀이 죽은", "침울한"],
-      "action": ["긁적이는", "침묵하는", "참는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "141",
-    "title": "하루에도 400번씩 합니다!",
-    "category": {
-      "character": ["박명수"],
-      "place": [],
-      "object": [],
-      "emotion": ["고무된", "자랑스러운", "희열에 넘친"],
-      "action": ["바라보는", "말하는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "7.png",
-    "title": "123",
-    "category": {
-      "character": ["123"],
-      "place": [],
-      "object": [],
-      "emotion": [],
-      "action": [],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "140.png",
-    "title": "퇴근도 눈치껏",
-    "category": {
-      "character": ["정형돈"],
-      "place": ["회사"],
-      "object": [],
-      "emotion": ["마음이 내키지 않는", "우울한", "풀이 죽은", "침울한"],
-      "action": ["긁적이는", "침묵하는", "참는"],
-      "text":[],
-      "emoji": []
-    },
-    "description": "123"
-  },
-  {
-    "image": "141.png",
-    "title": "하루에도 400번씩 합니다!",
-    "category": {
-      "character": ["박명수"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["고무된", "자랑스러운", "희열에 넘친"],
       "action": ["바라보는", "말하는"],
@@ -2131,7 +1977,7 @@
     "title": "하찮은 박명수님...",
     "category": {
       "character": ["노홍철"],
-      "place": ["강당"],
+      "episode": ["국민 여동생 김연아"],
       "object": [],
       "emotion": ["하찮은", "얕보는", "멸시하는"],
       "action": ["깔보는", "내려다보는", "읖조리는"],
@@ -2145,7 +1991,7 @@
     "title": "한철 장사 하겠다는 얘기 아냐!",
     "category": {
       "character": ["정형돈", "박명수"],
-      "place": [],
+      "episode": ["짝꿍"],
       "object": [],
       "emotion": ["화난", "격양한", "신경질이 난", "시샘하는"],
       "action": ["반박하는", "호통치는", "화내는"],
@@ -2159,7 +2005,7 @@
     "title": "현장에서 보세요 좀!",
     "category": {
       "character": ["박명수", "정준하"],
-      "place": [],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["화난", "격양한", "신경질이 난"],
       "action": ["호통치는", "화내는"],
@@ -2173,7 +2019,7 @@
     "title": "형이 왜 거기서 나와",
     "category": {
       "character": ["정형돈"],
-      "place": [],
+      "episode": ["유혹의 거인"],
       "object": [],
       "emotion": ["당황스러운", "얼떨떨한", "놀라운", "감미로운"],
       "action": ["눈이 커진", "당황한"],
@@ -2187,7 +2033,7 @@
     "title": "홍철이 없는 홍철팀",
     "category": {
       "character": ["노홍철"],
-      "place": [],
+      "episode": ["빙고"],
       "object": [],
       "emotion": ["당황스러운", "어이없는", "허탈한"],
       "action": ["헛웃음 짓는", "당황한"],
@@ -2201,11 +2047,11 @@
     "title": "제가 잘못된 거예요?",
     "category": {
       "character": ["노홍철"],
-      "place": [],
+      "episode": ["정신감정"],
       "object": [],
       "emotion": ["당황스러운", "어이없는", "황당한"],
-      "action": ["당황한", "눈을 부릅뜨는"],
-      "text":["제가잘못된거에요?"],
+      "action": ["당황한", "눈을 부릅 뜨는"],
+      "text":["제가 잘못된거에요?"],
       "emoji": []
     },
     "description": "123"
@@ -2215,7 +2061,7 @@
     "title": "흐트러짐 없는 일인자의 자세",
     "category": {
       "character": ["유재석"],
-      "place": ["회사"],
+      "episode": ["무한상사"],
       "object": [],
       "emotion": ["밝은", "유쾌한", "활기찬"],
       "action": ["웃고있는", "응시하는"],
@@ -2229,11 +2075,11 @@
     "title": "히트다 히트",
     "category": {
       "character": ["하하", "황광희", "박명수"],
-      "place": [],
+      "episode": ["오늘 뭐하지?"],
       "object": [],
-      "emotion": ["유쾌한", "만족스런", "흡족한", "재미있는"],
+      "emotion": ["유쾌한", "만족스러운", "흡족한", "재미있는"],
       "action": ["크게웃는", "웃고 떠드는"],
-      "text":["야 히트다 히트"],
+      "text":["히트다 히트"],
       "emoji": []
     },
     "description": "123"
@@ -2242,7 +2088,7 @@
     "title": "그건 살쩌서 그래요",
     "category": {
       "character": ["길"],
-      "place": [],
+      "episode": ["완전 남자다잉!"],
       "object": [],
       "emotion": ["귀찮은", "질색인", "멸시하는", "비난하는"],
       "action": ["깔보는", "질책하는", "화내는"],
@@ -2256,7 +2102,7 @@
     "title": "총명한데 배움이 없는 거지",
     "category": {
       "character": ["이경제"],
-      "place": ["병원"],
+      "episode": ["완전 남자다잉!"],
       "object": [],
       "emotion": ["단호한", "비난하는", "멸시하는"],
       "action": ["손을 치켜세우는", "눈을 부릅 뜨는"],
@@ -2270,7 +2116,7 @@
     "title": "123",
     "category": {
       "character": ["정형돈"],
-      "place": [],
+      "episode": ["완전 남자다잉!"],
       "object": [],
       "emotion": ["당황스러운", "허탈한", "혼란스러운"],
       "action": ["어이없이 웃는", "당황한"],
@@ -2284,7 +2130,7 @@
     "title": "어? 열받네...",
     "category": {
       "character": ["유재석"],
-      "place": [],
+      "episode": ["정신감정"],
       "object": [],
       "emotion": ["격양된", "노발대발한", "흥분한", "성난"],
       "action": ["무작정 우기는", "밑도끝도 없는"],
@@ -2298,7 +2144,7 @@
     "title": "나는 그럴만한 그릇이 아닌데",
     "category": {
       "character": ["정형돈"],
-      "place": [],
+      "episode": ["완전 남자다잉!"],
       "object": [],
       "emotion": ["우려하는", "근심하는", "염려스러운"],
       "action": ["응시하는", "고민하는"],
@@ -2312,7 +2158,7 @@
     "title": "가만 있어 보세요 약발은 받아야죠",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["완전 남자다잉!"],
       "object": [],
       "emotion": ["기대하는", "간절히 하고 싶어하는", "멋쩍은", "쑥스러운"],
       "action": ["고집있는"],
@@ -2326,7 +2172,7 @@
     "title": "어~ 그래",
     "category": {
       "character": ["노홍철"],
-      "place": [],
+      "episode": ["완전 남자다잉!"],
       "object": [],
       "emotion": ["당당한", "흐뭇하다", "뻔뻔한"],
       "action": ["익살스러운 표정", "거만한 표정"],
@@ -2340,10 +2186,10 @@
     "title": "이미 1등은 포기한",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["정신감정"],
       "object": [],
-      "emotion": ["낙담한", "무기력한", "하찮은"],
-      "action": ["체념한", "좌절한"],
+      "emotion": ["체념한", "좌절한", "낙담한", "무기력한", "하찮은"],
+      "action": ["풀이 죽은"],
       "text":["이미 1등은 포기한"],
       "emoji": []
     },
@@ -2354,10 +2200,10 @@
     "title": "그릇이 작네...",
     "category": {
       "character": ["박명수"],
-      "place": [],
+      "episode": ["정신감정"],
       "object": [],
       "emotion": ["소심한", "실망한", "걱정하는"],
-      "action": ["한탄하는", "근심하는", "풀이죽은"],
+      "action": ["한탄하는", "근심하는", "풀이 죽은", "담담하게 말하는"],
       "text":[],
       "emoji": []
     },
@@ -2368,7 +2214,7 @@
     "title": "저 인간의 진단명이 뭘까...?",
     "category": {
       "character": ["송현석"],
-      "place": [],
+      "episode": ["정신감정"],
       "object": [],
       "emotion": ["당혹스러운", "멸시하는", "질색인"],
       "action": ["당황한", "의문을 제기하는"],
@@ -2382,7 +2228,7 @@
     "title": "ADHD 집중력 장애",
     "category": {
       "character": ["노홍철"],
-      "place": [],
+      "episode": ["정신감정"],
       "object": [],
       "emotion": ["혼란스러운", "쉬고싶은", "피곤한"],
       "action": ["집중을 못하는", "산만한"],

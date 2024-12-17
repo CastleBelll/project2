@@ -35,28 +35,24 @@ function ArchiveLeft({ data, onSubItemClick, selectedItems }) {
 
   // 카테고리 값들을 순회하여 하나의 큰 카테고리로 합치는 함수
   const getCategoryItems = (data) => {
-    const categoryItems = {
-      character: [],
-      place: [],
-      object: [],
-      emotion: [],
-      action:[],
-      text: [],
-      emoji: []
-    };
-
-    // 각 항목을 해당 카테고리로 합침
+    const categoryItems = {};
+  
+    // 데이터 순회
     data.forEach((item) => {
       Object.keys(item.category).forEach((key) => {
+        if (!categoryItems[key]) {
+          categoryItems[key] = []; // 카테고리 키가 없으면 초기화
+        }
+  
         if (item.category[key] && item.category[key].length > 0) {
-          // 중복 항목을 제거
+          // 중복 항목 제거하며 병합
           categoryItems[key] = [
-            ...new Set([...categoryItems[key], ...item.category[key]]), // Set을 사용해 중복을 제거
+            ...new Set([...categoryItems[key], ...item.category[key]])
           ];
         }
       });
     });
-
+  
     return categoryItems;
   };
 

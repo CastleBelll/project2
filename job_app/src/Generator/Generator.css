@@ -15,7 +15,7 @@
   width: 80%;
   left: 10%;
   max-width: 80%;  /* 기본적으로 80%로 설정 */
-  min-height: 20%;
+  min-height: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +34,7 @@
   width: 100%;
   min-height: 100%;
   display: flex;
+  align-items: center;
   flex-direction: row; /* 좌우로 배치 */
 }
 
