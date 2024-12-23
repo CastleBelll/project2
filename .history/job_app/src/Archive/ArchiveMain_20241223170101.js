@@ -84,8 +84,7 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
   
         const plane = new THREE.Mesh(geometry, material);
         plane.position.set(...position);
-        plane.material.transparent = false;  // 투명 효과 제거
-        plane.material.opacity = 1;  // 완전히 불투명
+  
         // 크기 조정
         plane.scale.set(size, size, 1); // 최대 크기 1.5배 반영
   
@@ -129,7 +128,7 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
       if (intersects.length > 0) {
         intersects.sort((a, b) => b.object.renderOrder - a.object.renderOrder); // 정렬
         const intersectedPlane = intersects[0].object; // 가장 위의 plane
-        intersectedPlane.material.color.set(0xccffcc); // hover 색상
+        intersectedPlane.material.color.set(0x32cd32); // hover 색상
       }
     };
 

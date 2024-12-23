@@ -35,11 +35,10 @@
     font-weight: bold;
     gap: 20px;
     font-size: 20px;
-    padding-left: 20px;
     margin : 0 20px;
+    margin-left: 20px;
     border-bottom: 1px solid black;
   }
-
   .divider {
     width: 1px;  /* 세로선의 너비 */
     height: 101px;  /* 선의 높이 */
@@ -63,7 +62,7 @@
   .image-container-info {
     width: 100%;
     max-width: 600px;  /* 이미지 최대 너비 */
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     object-fit: contain; /* 비율을 유지하면서 크기를 제한 */
   }
   
@@ -79,7 +78,7 @@
   }
   
   .title-container-info {
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     font-size: 36px;
     font-weight: bold;
     word-wrap: break-word;  /* 제목이 길 경우 줄바꿈 처리 */
