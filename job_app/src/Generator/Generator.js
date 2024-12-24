@@ -149,7 +149,7 @@ const Generator = () => {
         const containerRect = container.getBoundingClientRect();
         const mousePos = mouse.position;
 
-        const mouseCanvasX = mousePos.x - containerRect.left;
+        const mouseCanvasX = mousePos.x - containerRect.left + 300;
         const mouseCanvasY = mousePos.y - containerRect.top;
 
         // 화면 조건 확인 (너비의 80%, 높이의 top에서 80px 떨어진 높이의 20%)

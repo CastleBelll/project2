@@ -6,10 +6,18 @@ const ArchiveInfo = ({ selectedImageInfo, setSelectedImageInfo }) => {
   const [imageData, setImageData] = useState(null);
 
   useEffect(() => {
+    if (!selectedImageInfo) return;
+  
     fetch('/json/images.json')
       .then((response) => response.json())
       .then((jsonData) => {
-        const selectedImage = jsonData.find((item) => item.image === `${selectedImageInfo + 1}.png`);
+        // selectedImageInfo에 .png가 포함되어 있는지 확인
+        const imageName = selectedImageInfo.includes('.png') 
+          ? selectedImageInfo 
+          : `${selectedImageInfo + 1}.png`;
+  
+        // 이미지 데이터를 찾기
+        const selectedImage = jsonData.find((item) => item.image === imageName);
         if (selectedImage) {
           setImageData(selectedImage);
         } else {

@@ -48,12 +48,11 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
   
 
   useEffect(() => {
-    // 씬, 카메라, 렌더러 설정
     const scene = new THREE.Scene();
     const aspect = window.innerWidth / window.innerHeight;
   
     const camera = new THREE.OrthographicCamera(
-      -aspect * 5, // 기존의 3배 확장
+      -aspect * 5,
       aspect * 5,
       5,
       -5,
@@ -80,25 +79,20 @@ const ArchiveMain = ({setSelectedImageInfo}) => {
           map: loadedTexture,
           transparent: true,
           opacity: 1,
+          emissive: new THREE.Color(0x000000), // 원본 이미지 밝기 그대로 사용
         });
   
         const plane = new THREE.Mesh(geometry, material);
         plane.position.set(...position);
+        plane.scale.set(size, size, 1); // 크기 조정
+        plane.renderOrder = index; // 렌더 순서 지정
+        plane.userData = { id }; // 사용자 데이터 추가
   
-        // 크기 조정
-        plane.scale.set(size, size, 1); // 최대 크기 1.5배 반영
-  
-        // 렌더 순서 지정
-        plane.renderOrder = index;
-  
-        // 사용자 데이터 추가
-        plane.userData = { id };
-  
-        // 씬에 추가 및 참조 배열에 추가
         planes.push(plane);
         scene.add(plane);
       });
     });
+  
     planesRef.current = planes;
   
     const animate = () => {

@@ -63,7 +63,8 @@ const Archive = () => {
         <div className="main-area-container" style={{ flex: 1, position: 'relative' }}>
           {/* `selectedItemsList`가 비어있지 않으면 ArchiveSelected를 렌더링 */}
           {selectedItemsList.length > 0 ? (
-            <ArchiveSelects selectedItemsList={selectedItemsList} className="main-area" />
+            <ArchiveSelects selectedItemsList={selectedItemsList}   setSelectedImageInfo={setSelectedImageInfo} // 전달
+             className="main-area" />
           ) : selectedImageInfo ? (
             // ArchiveInfo 컴포넌트를 렌더링하며 setSelectedImageInfo 전달
             <ArchiveInfo

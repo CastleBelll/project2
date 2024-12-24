@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // 기본 스타일
-import 'swiper/css/effect-coverflow'; // coverflow 효과 스타일
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
 import './ArchiveSelects.css';
-
 import { EffectCoverflow } from 'swiper/modules';
 
-const ArchiveSelects = ({ selectedItemsList }) => {
+const ArchiveSelects = ({ selectedItemsList, setSelectedImageInfo }) => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [startX, setStartX] = useState(0); // 마우스 시작 위치 저장
+  const [startY, setStartY] = useState(0); // 마우스 시작 위치 저장
 
   useEffect(() => {
     fetch('/json/images.json')
       .then((response) => response.json())
       .then((data) => {
         const filteredImages = data.filter((item) =>
-          selectedItemsList.every((selectedItem) =>
+          selectedItemsList.some((selectedItem) =>
             Object.values(item.category).some((categoryValues) =>
               categoryValues.includes(selectedItem)
             )
@@ -38,19 +39,19 @@ const ArchiveSelects = ({ selectedItemsList }) => {
         <p>No images found for selected items.</p>
       ) : (
         <Swiper
-          spaceBetween={-500} // 슬라이드 간의 간격
-          slidesPerView={3} // 화면에 보여질 슬라이드 개수
-          loop={true} // 반복 재생
-          centeredSlides={true} // 가운데 정렬
-          grabCursor={true} // 드래그 커서
-          effect="coverflow" // coverflow 효과 사용
+          spaceBetween={-500}
+          slidesPerView={3}
+          loop={true}
+          centeredSlides={true}
+          grabCursor={true} // 드래그 커서 유지
+          effect="coverflow"
           coverflowEffect={{
-            rotate: 10, // 회전 각도
-            stretch: 0, // 슬라이드 간 간격
-            depth: 100, // 깊이
-            modifier: 0, // 효과 세기 조절
-            slideShadows: true, // 그림자 효과
-            scale: 0.7, // 확대 비율
+            rotate: 10,
+            stretch: 0,
+            depth: 100,
+            modifier: 0,
+            slideShadows: true,
+            scale: 0.7,
           }}
           modules={[EffectCoverflow]}
           className="swiper-container"
@@ -61,7 +62,24 @@ const ArchiveSelects = ({ selectedItemsList }) => {
                 src={`/images/${item.image}`}
                 alt={item.title}
                 className="carousel-image"
-                loading="lazy" // 이미지 Lazy Loading 적용
+                loading="lazy"
+                onMouseDown={(e) => {
+                  setStartX(e.clientX); // 마우스 클릭 시작 X 좌표 저장
+                  setStartY(e.clientY); // 마우스 클릭 시작 Y 좌표 저장
+                }}
+                onMouseUp={(e) => {
+                  const endX = e.clientX; // 마우스 클릭 종료 X 좌표
+                  const endY = e.clientY; // 마우스 클릭 종료 Y 좌표
+
+                  // 클릭인지 드래그인지 판단 (좌표 변화가 미세하면 클릭으로 간주)
+                  if (
+                    Math.abs(endX - startX) < 5 &&
+                    Math.abs(endY - startY) < 5
+                  ) {
+                    setSelectedImageInfo(item.image); // 클릭으로 간주해 이벤트 처리
+                    console.log('Selected Image Info:', item.image);
+                  }
+                }}
               />
             </SwiperSlide>
           ))}
