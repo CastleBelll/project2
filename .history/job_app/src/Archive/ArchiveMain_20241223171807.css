@@ -24,7 +24,7 @@
 
 .refresh-button {
   position: absolute;
-  right: 30px; /* 오른쪽으로 100px 떨어진 위치 */
+  right: 40px; /* 오른쪽으로 100px 떨어진 위치 */
   top: 50px; /* 수직 중앙에 위치 */
   transform: translateY(-50%); /* 정확히 중앙에 위치시키기 위해 Y축으로 50%만큼 이동 */
   width: 50px; /* 원 크기 */

@@ -63,7 +63,7 @@
   .image-container-info {
     width: 100%;
     max-width: 600px;  /* 이미지 최대 너비 */
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     object-fit: contain; /* 비율을 유지하면서 크기를 제한 */
   }
   

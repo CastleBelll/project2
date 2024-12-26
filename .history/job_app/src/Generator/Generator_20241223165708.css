@@ -66,13 +66,13 @@
   flex-direction: column; /* 세로 방향으로 배치 */
   background-color: white;
   min-width: 40px;
-  height: 57%; /* 높이를 고정 */
+  height: 60%; /* 높이를 고정 */
   transform-origin: right;
   transition: width 0.5s ease; /* 너비 변화만 부드럽게 */
 }
 
 .generator-arial.open {
-  width: 29%; /* open 상태에서의 width */
+  width: 30%; /* open 상태에서의 width */
   max-height: 100%;
 }
 
