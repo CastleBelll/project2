@@ -44,11 +44,21 @@ const Archive = () => {
     setSelectedItemsList(newSelectedItems); // ArchiveHeader에서 받은 selectedItems를 set
   };
 
+  const handleImageSelection = (imageInfo) => {
+    setSelectedImageInfo(imageInfo); // 선택된 이미지 정보를 설정
+    setSelectedItemsList([]); // 선택된 이미지가 있으면 리스트 초기화
+    console.log('Image selected:', imageInfo); // 디버깅용 로그
+  };
+
   return (
     <div className="archive-container">
       {/* Left sidebar */}
-      <ArchiveLeft data={data} onSubItemClick={handleSubItemClick} selectedItems={selectedItems} // selectedItems를 ArchiveLeft에 전달
-        className="left-sidebar" />
+      <ArchiveLeft
+        data={data}
+        onSubItemClick={handleSubItemClick}
+        selectedItems={selectedItems} // selectedItems를 ArchiveLeft에 전달
+        className="left-sidebar"
+      />
 
       {/* Right container */}
       <div className="right-container">
@@ -61,21 +71,22 @@ const Archive = () => {
 
         {/* Main content */}
         <div className="main-area-container" style={{ flex: 1, position: 'relative' }}>
-          {/* `selectedItemsList`가 비어있지 않으면 ArchiveSelected를 렌더링 */}
-          {selectedItemsList.length > 0 ? (
-            <ArchiveSelects selectedItemsList={selectedItemsList}   setSelectedImageInfo={setSelectedImageInfo} // 전달
-             className="main-area" />
-          ) : selectedImageInfo ? (
-            // ArchiveInfo 컴포넌트를 렌더링하며 setSelectedImageInfo 전달
+          {/* `selectedImageInfo`가 우선적으로 렌더링 */}
+          {selectedImageInfo ? (
             <ArchiveInfo
               selectedImageInfo={selectedImageInfo}
               setSelectedImageInfo={setSelectedImageInfo}
               className="main-area"
             />
+          ) : selectedItemsList.length > 0 ? (
+            <ArchiveSelects
+              selectedItemsList={selectedItemsList}
+              setSelectedImageInfo={handleImageSelection} // handleImageSelection 함수 전달
+              className="main-area"
+            />
           ) : (
-            // ArchiveMain 컴포넌트 렌더링
             <ArchiveMain
-              setSelectedImageInfo={setSelectedImageInfo}
+              setSelectedImageInfo={handleImageSelection}
               className="main-area"
             />
           )}

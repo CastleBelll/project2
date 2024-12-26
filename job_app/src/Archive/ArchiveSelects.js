@@ -58,29 +58,34 @@ const ArchiveSelects = ({ selectedItemsList, setSelectedImageInfo }) => {
         >
           {images.map((item, index) => (
             <SwiperSlide key={index} className="swiper-slide">
-              <img
-                src={`/images/${item.image}`}
-                alt={item.title}
-                className="carousel-image"
-                loading="lazy"
-                onMouseDown={(e) => {
-                  setStartX(e.clientX); // 마우스 클릭 시작 X 좌표 저장
-                  setStartY(e.clientY); // 마우스 클릭 시작 Y 좌표 저장
-                }}
-                onMouseUp={(e) => {
-                  const endX = e.clientX; // 마우스 클릭 종료 X 좌표
-                  const endY = e.clientY; // 마우스 클릭 종료 Y 좌표
+<img
+  src={`/images/${item.image}`}
+  alt={item.title}
+  className="carousel-image"
+  loading="lazy"
+  onClick={() => {
+    // Swiper 이벤트와 겹치지 않게 onClick 사용
+    setSelectedImageInfo(item.image); // 클릭으로 간주해 이벤트 처리
+    console.log('Selected Image Info:', item.image);
+  }}
+  onMouseDown={(e) => {
+    e.stopPropagation(); // Swiper 이벤트와 충돌 방지
+    setStartX(e.clientX); // 마우스 클릭 시작 X 좌표 저장
+    setStartY(e.clientY); // 마우스 클릭 시작 Y 좌표 저장
+  }}
+  onMouseUp={(e) => {
+    e.stopPropagation(); // Swiper 이벤트와 충돌 방지
+    const endX = e.clientX; // 마우스 클릭 종료 X 좌표
+    const endY = e.clientY; // 마우스 클릭 종료 Y 좌표
 
-                  // 클릭인지 드래그인지 판단 (좌표 변화가 미세하면 클릭으로 간주)
-                  if (
-                    Math.abs(endX - startX) < 5 &&
-                    Math.abs(endY - startY) < 5
-                  ) {
-                    setSelectedImageInfo(item.image); // 클릭으로 간주해 이벤트 처리
-                    console.log('Selected Image Info:', item.image);
-                  }
-                }}
-              />
+    // 클릭인지 드래그인지 판단 (좌표 변화가 미세하면 클릭으로 간주)
+    if (Math.abs(endX - startX) < 5 && Math.abs(endY - startY) < 5) {
+      setSelectedImageInfo(item.image);
+      console.log('Selected Image Info:', item.image);
+    }
+  }}
+/>
+
             </SwiperSlide>
           ))}
         </Swiper>

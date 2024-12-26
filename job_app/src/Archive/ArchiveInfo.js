@@ -12,7 +12,7 @@ const ArchiveInfo = ({ selectedImageInfo, setSelectedImageInfo }) => {
       .then((response) => response.json())
       .then((jsonData) => {
         // selectedImageInfo에 .png가 포함되어 있는지 확인
-        const imageName = selectedImageInfo.includes('.png') 
+        const imageName = String(selectedImageInfo).includes('.png') 
           ? selectedImageInfo 
           : `${selectedImageInfo + 1}.png`;
   
